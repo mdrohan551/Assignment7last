@@ -1,5 +1,5 @@
 import UserModel from "../models/UserModel.js";
-import { CreateBlogService, CreateServiceService, CreateSliderService, CreateTeamService, DeleteBlogService, DeleteServiceService, DeleteTeamService, GetBlogHomeService, GetBlogService, GetServiceService, GetSingleBlogService, GetSliderService, GetTeamService, UpdateBlogService, UpdateTeamService } from "../services/SectionServices.js";
+import { CreateBlogService, CreateContactService, CreateServiceService, CreateSliderService, CreateTeamService, DeleteBlogService, DeleteServiceService, DeleteTeamService, GetBlogHomeService, GetBlogService, GetContactService, GetServiceService, GetSingleBlogService, GetSliderService, GetTeamService, UpdateBlogService, UpdateTeamService } from "../services/SectionServices.js";
 
 export const CreateBlogController = async (req, res) => {
   let result = await CreateBlogService(req);
@@ -151,3 +151,22 @@ export const DeleteServiceController = async (req, res) => {
   });
 };
 // ...................................................................................................
+export const CreateContactController = async (req, res) => {
+  let result = await CreateContactService(req);
+  return res.status(result.status).json({
+    success: result.success,
+    error: result.error,
+    message: result.message,
+    data: result.data,
+  });
+};
+
+export const ReadContactController = async (req, res) => {
+  let result = await GetContactService(req);
+  return res.status(result.status).json({
+    success: result.success,
+    error: result.error,
+    message: result.message,
+    data: result.data,
+  });
+};

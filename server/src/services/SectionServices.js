@@ -1,3 +1,4 @@
+import ContactModel from "../models/ContactModel.js";
 import ServiceModel from "../models/ServiceModel.js";
 import SliderModel from "../models/SliderModel.js";
 import TeamModel from "../models/TeamModel.js";
@@ -515,5 +516,58 @@ export const DeleteServiceService = async (req) => {
   }
 };
 // ...................................................................................................
+export const CreateContactService = async (req) => {
+  try {
+    const { name, email, subject, message } = req.body;
 
+    if (!name || !email || !subject || !message) {
+      return {
+        status: 400,
+        success: false,
+        error: true,
+        message: "All fields are required",
+      };
+    }
+    const contact = await ContactModel.create({
+      name,
+      email,
+      subject,
+      message,
+    });
+    return {
+      status: 201,
+      success: true,
+      error: false,
+      message: "Your Message successfully Send",
+      data: contact,
+    };
+  } catch (e) {
+    return {
+      status: 500,
+      success: false,
+      error: true,
+      message: e.message || "Something went wrong",
+    };
+  }
+};
+
+export const GetContactService = async (req) => {
+  try {
+    const findBlog = await ContactModel.find({});
+    return {
+      status: 200,
+      success: true,
+      error: false,
+      message: "Blog Read successfully",
+      data: findBlog,
+    };
+  } catch {
+    return {
+      status: 500,
+      success: false,
+      error: true,
+      message: "Something went wrong",
+    };
+  }
+};
 // ...................................................................................................
