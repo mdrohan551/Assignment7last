@@ -1,8 +1,8 @@
+import SliderModel from "../models/SliderModel.js";
 import BlogModel from "./../models/BlogModel.js";
 
 export const CreateBlogService = async (req) => {
   try {
-    const userId = req.headers.user_id; // Auth Middleware
     const { title, content, image, author, category } = req.body;
 
     if (!title || !content || !image || !author || !category) {
@@ -104,6 +104,80 @@ export const GetSingleBlogService = async (req) => {
       error: false,
       message: "Blog Read successfully",
       data: findSingleBlog,
+    };
+  } catch {
+    return {
+      status: 500,
+      success: false,
+      error: true,
+      message: "Something went wrong",
+    };
+  }
+};
+
+export const CreateSliderService = async (req) => {
+  try {
+    const { title, subtile, file } = req.body;
+
+    if (!title || !subtile || !file) {
+      return {
+        status: 400,
+        success: false,
+        error: true,
+        message: "All fields are required",
+      };
+    }
+    const findSlider = await SliderModel.findOne({});
+    if (findSlider) {
+      const update = await SliderModel.findOneAndUpdate(
+        { _id: findSlider._id },
+        {
+          title,
+          subtile,
+          file,
+        },
+        { new: true }
+      );
+      return {
+        status: 200,
+        success: true,
+        error: false,
+        message: "Slider updated successfully",
+        data: update,
+      };
+    } else {
+      const slider = await SliderModel.create({
+        title,
+        subtile,
+        file,
+      });
+      return {
+        status: 201,
+        success: true,
+        error: false,
+        message: "Slider Created Successfully",
+        data: slider,
+      };
+    }
+  } catch (e) {
+    return {
+      status: 500,
+      success: false,
+      error: true,
+      message: e.message || "Something went wrong",
+    };
+  }
+};
+
+export const GetSliderService = async (req) => {
+  try {
+    const findSlider = await SliderModel.findOne({});
+    return {
+      status: 200,
+      success: true,
+      error: false,
+      message: "Slider Read successfully",
+      data: findSlider,
     };
   } catch {
     return {
