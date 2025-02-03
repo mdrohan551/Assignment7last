@@ -451,7 +451,7 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": "/C:/Users/User/Desktop/pexels-moh-adbelghaffar-771742.jpg"
+									"src": "/C:/Users/User/Pictures/Md Fawjul Azim pic.jpg"
 								}
 							]
 						},
@@ -606,7 +606,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Blog Title\",\r\n    \"content\": \"Full blog content...\",\r\n    \"image\": \"https://example.com/image.jpg\",\r\n    \"author\": \"Author Name\",\r\n    \"category\": \"Technology\"\r\n}",
+							"raw": "{\r\n    \"title\": \"Blog Title 02\",\r\n    \"content\": \"Full blog content...\",\r\n    \"image\": \"https://example.com/image.jpg\",\r\n    \"author\": \"Author Name\",\r\n    \"category\": \"Technology\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -747,22 +747,290 @@
 					]
 				},
 				{
-					"name": "Get Blog",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
+					"name": "Update Blog",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Blog Title\",\r\n    \"content\": \"Full blog content...\",\r\n    \"image\": \"https://example.com/image.jpg\",\r\n    \"author\": \"Author Name\",\r\n    \"category\": \"Technology\"\r\n}",
+							"raw": "{\r\n    \"title\": \"Blog Title\",\r\n    \"content\": \"Full blog hi content...\",\r\n    \"image\": \"https://example.com/image.jpg\",\r\n    \"author\": \"Author Name\",\r\n    \"category\": \"Technology\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
+						"url": {
+							"raw": "{{BASE}}/update-blog/67a10885038d7728ef3c9aa2",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"update-blog",
+								"67a10885038d7728ef3c9aa2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Blog Route",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Blog Title\",\r\n    \"content\": \"Full blog hi content...\",\r\n    \"image\": \"https://example.com/image.jpg\",\r\n    \"author\": \"Author Name\",\r\n    \"category\": \"Technology\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE}}/update-blog/67a10885038d7728ef3c9aa2",
+									"host": [
+										"{{BASE}}"
+									],
+									"path": [
+										"update-blog",
+										"67a10885038d7728ef3c9aa2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 18:23:50 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1738607931"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "352"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"error\": false,\n    \"message\": \"Blog updated successfully\",\n    \"data\": {\n        \"_id\": \"67a10885038d7728ef3c9aa2\",\n        \"title\": \"Blog Title\",\n        \"slug\": \"blog-title\",\n        \"content\": \"Full blog hi content...\",\n        \"image\": \"https://example.com/image.jpg\",\n        \"author\": \"Author Name\",\n        \"category\": \"Technology\",\n        \"createdAt\": \"2025-02-03T18:18:45.904Z\",\n        \"updatedAt\": \"2025-02-03T18:23:50.710Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Blog",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE}}/delete-blog/67a10889038d7728ef3c9aa5",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"delete-blog",
+								"67a10889038d7728ef3c9aa5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Blog Route",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE}}/delete-blog/67a10889038d7728ef3c9aa5",
+									"host": [
+										"{{BASE}}"
+									],
+									"path": [
+										"delete-blog",
+										"67a10889038d7728ef3c9aa5"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "96"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 18:25:06 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1738607991"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "114"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"error\": false,\n    \"message\": \"Blog Deleted Successfully\",\n    \"data\": {\n        \"acknowledged\": true,\n        \"deletedCount\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Blog",
+					"request": {
+						"method": "GET",
+						"header": [],
 						"url": {
 							"raw": "{{BASE}}/read-blog",
 							"host": [
@@ -889,21 +1157,9 @@
 				},
 				{
 					"name": "Get Blog For Home page",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Blog Title\",\r\n    \"content\": \"Full blog content...\",\r\n    \"image\": \"https://example.com/image.jpg\",\r\n    \"author\": \"Author Name\",\r\n    \"category\": \"Technology\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
 							"raw": "{{BASE}}/read-blog-home",
 							"host": [
@@ -920,15 +1176,6 @@
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"title\": \"Blog Title\",\r\n    \"content\": \"Full blog content...\",\r\n    \"image\": \"https://example.com/image.jpg\",\r\n    \"author\": \"Author Name\",\r\n    \"category\": \"Technology\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
 									"raw": "{{BASE}}/read-blog-home",
 									"host": [
@@ -1165,6 +1412,1413 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"success\": true,\n    \"error\": false,\n    \"message\": \"Blog Read successfully\",\n    \"data\": {\n        \"_id\": \"67a0b008b86773168e17b2ca\",\n        \"title\": \"Blog Title\",\n        \"slug\": \"blog-title\",\n        \"content\": \"Full blog content...\",\n        \"image\": \"https://example.com/image.jpg\",\n        \"author\": \"Author Name\",\n        \"category\": \"Technology\",\n        \"createdAt\": \"2025-02-03T12:01:12.468Z\",\n        \"updatedAt\": \"2025-02-03T12:01:12.468Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Slider Model",
+			"item": [
+				{
+					"name": "Create Slider",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Blog Title 1\",\r\n    \"subtile\": \"Full blog content...\",\r\n    \"file\": \"https://example.com/image.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE}}/create-slider",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"create-slider"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Slider Route",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Blog Title\",\r\n    \"subtile\": \"Full blog content...\",\r\n    \"file\": \"https://example.com/image.jpg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE}}/create-slider",
+									"host": [
+										"{{BASE}}"
+									],
+									"path": [
+										"create-slider"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 16:47:16 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1738602137"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "283"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"error\": false,\n    \"message\": \"Slider Created Successfully\",\n    \"data\": {\n        \"title\": \"Blog Title\",\n        \"subtile\": \"Full blog content...\",\n        \"file\": \"https://example.com/image.jpg\",\n        \"_id\": \"67a0f314f16639aa39398a0a\",\n        \"createdAt\": \"2025-02-03T16:47:16.664Z\",\n        \"updatedAt\": \"2025-02-03T16:47:16.664Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Slider",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE}}/read-slider",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"read-slider"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Slider Route",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE}}/read-slider",
+									"host": [
+										"{{BASE}}"
+									],
+									"path": [
+										"read-slider"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "96"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 17:11:27 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1738603504"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "282"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"error\": false,\n    \"message\": \"Slider Read successfully\",\n    \"data\": {\n        \"_id\": \"67a0f88a56b8ab01ee690d59\",\n        \"title\": \"Blog Title 1\",\n        \"subtile\": \"Full blog content...\",\n        \"file\": \"https://example.com/image.jpg\",\n        \"createdAt\": \"2025-02-03T17:10:34.311Z\",\n        \"updatedAt\": \"2025-02-03T17:10:34.311Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Team Page",
+			"item": [
+				{
+					"name": "Create Team",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Blog Title\",\r\n    \"designation\": \"Full blog content...\",\r\n    \"image\": \"https://example.com/image.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE}}/create-team",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"create-team"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Team Route",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Blog Title\",\r\n    \"designation\": \"Full blog content...\",\r\n    \"image\": \"https://example.com/image.jpg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE}}/create-team",
+									"host": [
+										"{{BASE}}"
+									],
+									"path": [
+										"create-team"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "97"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 17:37:34 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1738605134"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "292"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"error\": false,\n    \"message\": \"Team member created successfully\",\n    \"data\": {\n        \"name\": \"Blog Title\",\n        \"designation\": \"Full blog content...\",\n        \"image\": \"https://example.com/image.jpg\",\n        \"_id\": \"67a0fedeb78b5ed291b3b2e6\",\n        \"createdAt\": \"2025-02-03T17:37:34.182Z\",\n        \"updatedAt\": \"2025-02-03T17:37:34.182Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Team",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Blog Title 01\",\r\n    \"designation\": \"Full blog content...\",\r\n    \"image\": \"https://example.com/image.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE}}/update-team/67a10519d28a9fcbd4f8df16",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"update-team",
+								"67a10519d28a9fcbd4f8df16"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Team Route",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{BASE}}/update-team/67a0fec9b78b5ed291b3b2e2",
+									"host": [
+										"{{BASE}}"
+									],
+									"path": [
+										"update-team",
+										"67a0fec9b78b5ed291b3b2e2"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "97"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 17:49:43 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1738605873"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "292"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"error\": false,\n    \"message\": \"Team member Updated successfully\",\n    \"data\": {\n        \"_id\": \"67a0fec9b78b5ed291b3b2e2\",\n        \"name\": \"Blog Title\",\n        \"designation\": \"Full blog content...\",\n        \"image\": \"https://example.com/image.jpg\",\n        \"createdAt\": \"2025-02-03T17:37:13.291Z\",\n        \"updatedAt\": \"2025-02-03T17:49:43.983Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Team",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Blog Title\",\r\n    \"designation\": \"Full blog content...\",\r\n    \"image\": \"https://example.com/image.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE}}/delete-team/67a10518d28a9fcbd4f8df14",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"delete-team",
+								"67a10518d28a9fcbd4f8df14"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Team Route",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Blog Title\",\r\n    \"designation\": \"Full blog content...\",\r\n    \"image\": \"https://example.com/image.jpg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE}}/delete-team/67a0feddb78b5ed291b3b2e4",
+									"host": [
+										"{{BASE}}"
+									],
+									"path": [
+										"delete-team",
+										"67a0feddb78b5ed291b3b2e4"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "97"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 18:02:41 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1738606474"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "121"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"error\": false,\n    \"message\": \"Team Member Deleted Successfully\",\n    \"data\": {\n        \"acknowledged\": true,\n        \"deletedCount\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get team",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE}}/read-team",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"read-team"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Team Route",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE}}/read-team",
+									"host": [
+										"{{BASE}}"
+									],
+									"path": [
+										"read-team"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 17:40:21 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1738605322"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "704"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"error\": false,\n    \"message\": \"Blog Read successfully\",\n    \"data\": [\n        {\n            \"_id\": \"67a0fec9b78b5ed291b3b2e2\",\n            \"name\": \"Blog Title\",\n            \"designation\": \"Full blog content...\",\n            \"image\": \"https://example.com/image.jpg\",\n            \"createdAt\": \"2025-02-03T17:37:13.291Z\",\n            \"updatedAt\": \"2025-02-03T17:37:13.291Z\"\n        },\n        {\n            \"_id\": \"67a0feddb78b5ed291b3b2e4\",\n            \"name\": \"Blog Title\",\n            \"designation\": \"Full blog content...\",\n            \"image\": \"https://example.com/image.jpg\",\n            \"createdAt\": \"2025-02-03T17:37:33.126Z\",\n            \"updatedAt\": \"2025-02-03T17:37:33.126Z\"\n        },\n        {\n            \"_id\": \"67a0fedeb78b5ed291b3b2e6\",\n            \"name\": \"Blog Title\",\n            \"designation\": \"Full blog content...\",\n            \"image\": \"https://example.com/image.jpg\",\n            \"createdAt\": \"2025-02-03T17:37:34.182Z\",\n            \"updatedAt\": \"2025-02-03T17:37:34.182Z\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Services Page",
+			"item": [
+				{
+					"name": "Create & Update Service",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Service\",\r\n    \"description\": \"Full blog contefnt...\",\r\n    \"image\": \"https://example.com/image.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE}}/create-service",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"create-service"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create Service Route",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Service\",\r\n    \"description\": \"Full blog contefnt...\",\r\n    \"image\": \"https://example.com/image.jpg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE}}/create-service",
+									"host": [
+										"{{BASE}}"
+									],
+									"path": [
+										"create-service"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "94"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 18:48:05 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1738609328"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "287"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"error\": false,\n    \"message\": \"Service Created Successfully\",\n    \"data\": {\n        \"title\": \"Service\",\n        \"description\": \"Full blog contefnt...\",\n        \"image\": \"https://example.com/image.jpg\",\n        \"_id\": \"67a10f65266e795643abaaef\",\n        \"createdAt\": \"2025-02-03T18:48:05.436Z\",\n        \"updatedAt\": \"2025-02-03T18:48:05.436Z\"\n    }\n}"
+						},
+						{
+							"name": "Update Service Route",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Service\",\r\n    \"description\": \"Full blog contefnt...\",\r\n    \"image\": \"https://example.com/image.jpg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE}}/create-service",
+									"host": [
+										"{{BASE}}"
+									],
+									"path": [
+										"create-service"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "93"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 18:48:57 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1738609328"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "287"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"error\": false,\n    \"message\": \"Service updated successfully\",\n    \"data\": {\n        \"_id\": \"67a10f65266e795643abaaef\",\n        \"title\": \"Service\",\n        \"description\": \"Full blog contefnt...\",\n        \"image\": \"https://example.com/image.jpg\",\n        \"createdAt\": \"2025-02-03T18:48:05.436Z\",\n        \"updatedAt\": \"2025-02-03T18:48:57.469Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Service",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Blog Title\",\r\n    \"designation\": \"Full blog content...\",\r\n    \"image\": \"https://example.com/image.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE}}/delete-service/67a10c7457e69cc694776375",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"delete-service",
+								"67a10c7457e69cc694776375"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Service Route",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Blog Title\",\r\n    \"designation\": \"Full blog content...\",\r\n    \"image\": \"https://example.com/image.jpg\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE}}/delete-service/67a10c7457e69cc694776375",
+									"host": [
+										"{{BASE}}"
+									],
+									"path": [
+										"delete-service",
+										"67a10c7457e69cc694776375"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "95"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 18:47:49 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1738609328"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "117"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"error\": false,\n    \"message\": \"Service Deleted Successfully\",\n    \"data\": {\n        \"acknowledged\": true,\n        \"deletedCount\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Service",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE}}/read-service",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"read-service"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Service Route",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BASE}}/read-service",
+									"host": [
+										"{{BASE}}"
+									],
+									"path": [
+										"read-service"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "96"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 18:47:23 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1738609328"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "286"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"error\": false,\n    \"message\": \"Service Read successfully\",\n    \"data\": [\n        {\n            \"_id\": \"67a10c7457e69cc694776375\",\n            \"title\": \"Service\",\n            \"description\": \"Full blog contefnt...\",\n            \"image\": \"https://example.com/image.jpg\",\n            \"createdAt\": \"2025-02-03T18:35:32.234Z\",\n            \"updatedAt\": \"2025-02-03T18:45:59.904Z\"\n        }\n    ]\n}"
 						}
 					]
 				}
