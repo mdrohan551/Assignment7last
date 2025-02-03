@@ -217,7 +217,7 @@ export const GetSingleBlogService = async (req) => {
     };
   }
 };
-
+// ...................................................................................................
 export const CreateSliderService = async (req) => {
   try {
     const { title, subtile, file } = req.body;
@@ -291,7 +291,7 @@ export const GetSliderService = async (req) => {
     };
   }
 };
-
+// ...................................................................................................
 export const CreateTeamService = async (req) => {
   try {
     const { name, designation, image } = req.body;
@@ -416,3 +416,4 @@ export const DeleteTeamService = async (req) => {
     };
   }
 };
+// ...................................................................................................

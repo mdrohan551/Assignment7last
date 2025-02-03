@@ -59,6 +59,7 @@ export const ReadSingleBlogController = async (req, res) => {
     data: result.data,
   });
 };
+// ...................................................................................................
 
 
 export const CreateSliderController = async (req, res) => {
@@ -80,6 +81,7 @@ export const ReadSliderController = async (req, res) => {
     data: result.data,
   });
 };
+// ...................................................................................................
 
 export const CreateTeamController = async (req, res) => {
   let result = await CreateTeamService(req);
@@ -118,3 +120,5 @@ export const DeleteTeamController = async (req, res) => {
     data: result.data,
   });
 };
+
+// ...................................................................................................
