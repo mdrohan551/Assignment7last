@@ -17,6 +17,8 @@ router.post('/upload-file-multer',AuthMiddleware,uploads.single('file'),Controll
 
 //Create Blog 
 router.post('/create-blog',AuthMiddleware,SectionController.CreateBlogController);
+router.post('/update-blog/:id',AuthMiddleware,SectionController.UpdateBlogController);
+router.get('/delete-blog/:id',AuthMiddleware,SectionController.DeleteBlogController);
 
 router.get('/read-blog',SectionController.ReadBlogController);
 //get blog for homepage

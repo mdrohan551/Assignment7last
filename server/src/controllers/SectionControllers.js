@@ -1,8 +1,27 @@
 import UserModel from "../models/UserModel.js";
-import { CreateBlogService, CreateSliderService, CreateTeamService, DeleteTeamService, GetBlogHomeService, GetBlogService, GetSingleBlogService, GetSliderService, GetTeamService, UpdateTeamService } from "../services/SectionServices.js";
+import { CreateBlogService, CreateSliderService, CreateTeamService, DeleteBlogService, DeleteTeamService, GetBlogHomeService, GetBlogService, GetSingleBlogService, GetSliderService, GetTeamService, UpdateBlogService, UpdateTeamService } from "../services/SectionServices.js";
 
 export const CreateBlogController = async (req, res) => {
   let result = await CreateBlogService(req);
+  return res.status(result.status).json({
+    success: result.success,
+    error: result.error,
+    message: result.message,
+    data: result.data,
+  });
+};
+
+export const UpdateBlogController = async (req, res) => {
+  let result = await UpdateBlogService(req);
+  return res.status(result.status).json({
+    success: result.success,
+    error: result.error,
+    message: result.message,
+    data: result.data,
+  });
+};
+export const DeleteBlogController = async (req, res) => {
+  let result = await DeleteBlogService(req);
   return res.status(result.status).json({
     success: result.success,
     error: result.error,
@@ -82,7 +101,7 @@ export const ReadTeamController = async (req, res) => {
   });
 };
 export const UpdateTeamController = async (req, res) => {
-  let result = await DeleteTeamService(req);
+  let result = await UpdateTeamService(req);
   return res.status(result.status).json({
     success: result.success,
     error: result.error,

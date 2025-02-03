@@ -55,6 +55,108 @@ export const CreateBlogService = async (req) => {
   }
 };
 
+export const UpdateBlogService = async (req) => {
+  try {
+    const { id } = req.params;
+    const { title, content, image, author, category } = req.body;
+
+    // Blog Exist Check
+    const existingBlog = await BlogModel.findById(id);
+    if (!existingBlog) {
+      return {
+        status: 404,
+        success: false,
+        error: true,
+        message: "Blog not found",
+      };
+    }
+
+    // Only generate slug if title is updated
+    let slugCre = existingBlog.slug;
+    if (title) {
+      slugCre = title
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+
+      // Check if new slug already exists (excluding current blog)
+      let slugExists = await BlogModel.findOne({
+        slug: slugCre,
+        _id: { $ne: id },
+      });
+      if (slugExists) {
+        return {
+          status: 400,
+          success: false,
+          error: true,
+          message: "Title already exists",
+        };
+      }
+    }
+
+    // Update Blog
+    const updatedBlog = await BlogModel.findByIdAndUpdate(
+      id,
+      {
+        title: title || existingBlog.title,
+        slug: slugCre,
+        content: content || existingBlog.content,
+        image: image || existingBlog.image,
+        author: author || existingBlog.author,
+        category: category || existingBlog.category,
+      },
+      { new: true }
+    );
+
+    return {
+      status: 200,
+      success: true,
+      error: false,
+      message: "Blog updated successfully",
+      data: updatedBlog,
+    };
+  } catch (e) {
+    return {
+      status: 500,
+      success: false,
+      error: true,
+      message: e.message || "Something went wrong",
+    };
+  }
+};
+
+export const DeleteBlogService = async (req) => {
+  try {
+    const { id } = req.params;
+    if (!id) {
+      return {
+        status: 400,
+        success: false,
+        error: true,
+        message: "Id is required",
+      };
+    }
+
+    const Blog = await BlogModel.deleteOne({ _id: id });
+
+    return {
+      status: 201,
+      success: true,
+      error: false,
+      message: "Blog Deleted Successfully",
+      data: Blog,
+    };
+  } catch (e) {
+    return {
+      status: 500,
+      success: false,
+      error: true,
+      message: e.message || "Something went wrong",
+    };
+  }
+};
+
 export const GetBlogService = async (req) => {
   try {
     const findBlog = await BlogModel.find({});
