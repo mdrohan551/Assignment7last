@@ -59,9 +59,6 @@ export const logoutUser = async (req, res) => {
 
     res.clearCookie("token", cookieOptions);
 
-    await UserModel.findByIdAndUpdate(userId, {
-      refresh_token: null,
-    });
     return res.status(200).json({
       success: true,
       error: false,

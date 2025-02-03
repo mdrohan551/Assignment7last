@@ -61,7 +61,7 @@ app.get("/", (request, response) => {
   });
 });
 
-app.use("/uploads-file", express.static("uploads"));
+app.use("/api/v1/uploads-file", express.static("uploads"));
 
 app.all("*", (req, res) => {
   res.status(404).json({
