@@ -1,0 +1,6 @@
+---Registration
+        name,email,password,avatar
+---Login
+        email,password
+
+---
