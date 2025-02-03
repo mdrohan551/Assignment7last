@@ -3,4 +3,9 @@
 ---Login
         email,password
 
----
+---file Upload multer
+
+--- Home Page
+        title,slug,content,image,author,category
+--- About Page
+        
