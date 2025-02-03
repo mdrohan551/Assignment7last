@@ -19,6 +19,8 @@ router.post('/upload-file-multer',AuthMiddleware,uploads.single('file'),Controll
 router.post('/create-blog',AuthMiddleware,SectionController.CreateBlogController);
 
 router.get('/read-blog',SectionController.ReadBlogController);
+//get blog for homepage
+router.get('/read-blog-home',SectionController.GetBlogHomeController);
 router.get('/read-single-blog/:slug',SectionController.ReadSingleBlogController);
 
 

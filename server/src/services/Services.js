@@ -105,7 +105,6 @@ export const uploadMulterAvatarService = async (req) => {
   try {
     const userId = req.headers.user_id; // Auth Middleware
     const avatar = req.file; // multer Middleware
-
     if (!avatar) {
       return {
         status: 400,

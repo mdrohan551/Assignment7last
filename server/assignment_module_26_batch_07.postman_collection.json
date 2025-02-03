@@ -597,7 +597,7 @@
 			]
 		},
 		{
-			"name": "Page",
+			"name": "Home & Blog Page",
 			"item": [
 				{
 					"name": "Create Blog",
@@ -884,6 +884,156 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"success\": true,\n    \"error\": false,\n    \"message\": \"Blog Read successfully\",\n    \"data\": [\n        {\n            \"_id\": \"67a0b008b86773168e17b2ca\",\n            \"title\": \"Blog Title\",\n            \"slug\": \"blog-title\",\n            \"content\": \"Full blog content...\",\n            \"image\": \"https://example.com/image.jpg\",\n            \"author\": \"Author Name\",\n            \"category\": \"Technology\",\n            \"createdAt\": \"2025-02-03T12:01:12.468Z\",\n            \"updatedAt\": \"2025-02-03T12:01:12.468Z\"\n        },\n        {\n            \"_id\": \"67a0b145d64e9ef1f0aa36eb\",\n            \"title\": \"Blog Title 1\",\n            \"slug\": \"blog-title-1\",\n            \"content\": \"Full blog content...\",\n            \"image\": \"https://example.com/image.jpg\",\n            \"author\": \"Author Name\",\n            \"category\": \"Technology\",\n            \"createdAt\": \"2025-02-03T12:06:29.392Z\",\n            \"updatedAt\": \"2025-02-03T12:06:29.392Z\"\n        },\n        {\n            \"_id\": \"67a0b149d64e9ef1f0aa36ee\",\n            \"title\": \"Blog Title 2\",\n            \"slug\": \"blog-title-2\",\n            \"content\": \"Full blog content...\",\n            \"image\": \"https://example.com/image.jpg\",\n            \"author\": \"Author Name\",\n            \"category\": \"Technology\",\n            \"createdAt\": \"2025-02-03T12:06:33.447Z\",\n            \"updatedAt\": \"2025-02-03T12:06:33.447Z\"\n        },\n        {\n            \"_id\": \"67a0b14ed64e9ef1f0aa36f1\",\n            \"title\": \"Blog Title 3\",\n            \"slug\": \"blog-title-3\",\n            \"content\": \"Full blog content...\",\n            \"image\": \"https://example.com/image.jpg\",\n            \"author\": \"Author Name\",\n            \"category\": \"Technology\",\n            \"createdAt\": \"2025-02-03T12:06:38.219Z\",\n            \"updatedAt\": \"2025-02-03T12:06:38.219Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Blog For Home page",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Blog Title\",\r\n    \"content\": \"Full blog content...\",\r\n    \"image\": \"https://example.com/image.jpg\",\r\n    \"author\": \"Author Name\",\r\n    \"category\": \"Technology\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE}}/read-blog-home",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"read-blog-home"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Blog For Home page Route",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Blog Title\",\r\n    \"content\": \"Full blog content...\",\r\n    \"image\": \"https://example.com/image.jpg\",\r\n    \"author\": \"Author Name\",\r\n    \"category\": \"Technology\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BASE}}/read-blog-home",
+									"host": [
+										"{{BASE}}"
+									],
+									"path": [
+										"read-blog-home"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Resource-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Origin-Agent-Cluster",
+									"value": "?1"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "100"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "99"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Feb 2025 14:54:26 GMT"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1738595367"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1742"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"error\": false,\n    \"message\": \"Blog Read successfully\",\n    \"data\": [\n        {\n            \"_id\": \"67a0d7ee3cdf3ea944b9cb37\",\n            \"title\": \"Blog Title 7\",\n            \"slug\": \"blog-title-7\",\n            \"content\": \"Full blog content...\",\n            \"image\": \"https://example.com/image.jpg\",\n            \"author\": \"Author Name\",\n            \"category\": \"Technology\",\n            \"createdAt\": \"2025-02-03T14:51:26.831Z\",\n            \"updatedAt\": \"2025-02-03T14:51:26.831Z\"\n        },\n        {\n            \"_id\": \"67a0d7ea3cdf3ea944b9cb34\",\n            \"title\": \"Blog Title 6\",\n            \"slug\": \"blog-title-6\",\n            \"content\": \"Full blog content...\",\n            \"image\": \"https://example.com/image.jpg\",\n            \"author\": \"Author Name\",\n            \"category\": \"Technology\",\n            \"createdAt\": \"2025-02-03T14:51:22.950Z\",\n            \"updatedAt\": \"2025-02-03T14:51:22.950Z\"\n        },\n        {\n            \"_id\": \"67a0d7e73cdf3ea944b9cb31\",\n            \"title\": \"Blog Title 5\",\n            \"slug\": \"blog-title-5\",\n            \"content\": \"Full blog content...\",\n            \"image\": \"https://example.com/image.jpg\",\n            \"author\": \"Author Name\",\n            \"category\": \"Technology\",\n            \"createdAt\": \"2025-02-03T14:51:19.752Z\",\n            \"updatedAt\": \"2025-02-03T14:51:19.752Z\"\n        },\n        {\n            \"_id\": \"67a0d7e43cdf3ea944b9cb2e\",\n            \"title\": \"Blog Title 4\",\n            \"slug\": \"blog-title-4\",\n            \"content\": \"Full blog content...\",\n            \"image\": \"https://example.com/image.jpg\",\n            \"author\": \"Author Name\",\n            \"category\": \"Technology\",\n            \"createdAt\": \"2025-02-03T14:51:16.541Z\",\n            \"updatedAt\": \"2025-02-03T14:51:16.541Z\"\n        },\n        {\n            \"_id\": \"67a0b14ed64e9ef1f0aa36f1\",\n            \"title\": \"Blog Title 3\",\n            \"slug\": \"blog-title-3\",\n            \"content\": \"Full blog content...\",\n            \"image\": \"https://example.com/image.jpg\",\n            \"author\": \"Author Name\",\n            \"category\": \"Technology\",\n            \"createdAt\": \"2025-02-03T12:06:38.219Z\",\n            \"updatedAt\": \"2025-02-03T12:06:38.219Z\"\n        },\n        {\n            \"_id\": \"67a0b149d64e9ef1f0aa36ee\",\n            \"title\": \"Blog Title 2\",\n            \"slug\": \"blog-title-2\",\n            \"content\": \"Full blog content...\",\n            \"image\": \"https://example.com/image.jpg\",\n            \"author\": \"Author Name\",\n            \"category\": \"Technology\",\n            \"createdAt\": \"2025-02-03T12:06:33.447Z\",\n            \"updatedAt\": \"2025-02-03T12:06:33.447Z\"\n        }\n    ]\n}"
 						}
 					]
 				},

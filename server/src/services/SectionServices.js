@@ -74,6 +74,26 @@ export const GetBlogService = async (req) => {
   }
 };
 
+export const GetBlogHomeService = async (req) => {
+  try {
+    const findBlog = await BlogModel.find({}).sort({ _id: -1 }).limit(6);
+    return {
+      status: 200,
+      success: true,
+      error: false,
+      message: "Blog Read successfully",
+      data: findBlog,
+    };
+  } catch {
+    return {
+      status: 500,
+      success: false,
+      error: true,
+      message: "Something went wrong",
+    };
+  }
+};
+
 export const GetSingleBlogService = async (req) => {
   try {
     const { slug } = req.params;
