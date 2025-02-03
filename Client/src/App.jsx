@@ -1,20 +1,18 @@
-import React from 'react';
-import {BrowserRouter, Route, Routes,} from "react-router-dom";
-import ReadPage from "./pages/ReadPage.jsx";
-import CreatePage from "./pages/CreatePage.jsx";
-import UpdatePage from "./pages/UpdatePage.jsx";
 
 
-
+import React, { lazy, Suspense } from 'react';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+const HomePage = lazy(() => import('./pages/HomePage'));
 
 const App = () => {
     return (
        <BrowserRouter>
-           <Routes>
-               <Route path='/' element={<ReadPage/>}/>
-               <Route path='/create' element={<CreatePage/>}/>
-               <Route path='/update/:id' element={<UpdatePage/>}/>
-           </Routes>
+           <Suspense fallback={<div>Loading...</div>}>
+               <Routes>
+                   <Route path='/' element={<HomePage/>}/>
+                   {/* <Route path='/create' element={<CreatePage/>}/> */}
+               </Routes>
+           </Suspense>
        </BrowserRouter>
     );
 };
