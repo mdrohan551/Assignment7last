@@ -37,6 +37,12 @@ router.get('/delete-team/:id',AuthMiddleware,SectionController.DeleteTeamControl
 
 router.get('/read-team',SectionController.ReadTeamController);
 
+//Create Services
+router.post('/create-service',AuthMiddleware,SectionController.CreateServiceController);
+router.get('/delete-service/:id',AuthMiddleware,SectionController.DeleteServiceController);
+
+router.get('/read-service',SectionController.ReadServiceController);
+
 
 
 export default router;

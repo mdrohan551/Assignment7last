@@ -1,5 +1,5 @@
 import UserModel from "../models/UserModel.js";
-import { CreateBlogService, CreateSliderService, CreateTeamService, DeleteBlogService, DeleteTeamService, GetBlogHomeService, GetBlogService, GetSingleBlogService, GetSliderService, GetTeamService, UpdateBlogService, UpdateTeamService } from "../services/SectionServices.js";
+import { CreateBlogService, CreateServiceService, CreateSliderService, CreateTeamService, DeleteBlogService, DeleteServiceService, DeleteTeamService, GetBlogHomeService, GetBlogService, GetServiceService, GetSingleBlogService, GetSliderService, GetTeamService, UpdateBlogService, UpdateTeamService } from "../services/SectionServices.js";
 
 export const CreateBlogController = async (req, res) => {
   let result = await CreateBlogService(req);
@@ -121,4 +121,33 @@ export const DeleteTeamController = async (req, res) => {
   });
 };
 
+// ...................................................................................................
+export const CreateServiceController = async (req, res) => {
+  let result = await CreateServiceService(req);
+  return res.status(result.status).json({
+    success: result.success,
+    error: result.error,
+    message: result.message,
+    data: result.data,
+  });
+};
+
+export const ReadServiceController = async (req, res) => {
+  let result = await GetServiceService(req);
+  return res.status(result.status).json({
+    success: result.success,
+    error: result.error,
+    message: result.message,
+    data: result.data,
+  });
+};
+export const DeleteServiceController = async (req, res) => {
+  let result = await DeleteServiceService(req);
+  return res.status(result.status).json({
+    success: result.success,
+    error: result.error,
+    message: result.message,
+    data: result.data,
+  });
+};
 // ...................................................................................................

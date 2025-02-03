@@ -1,3 +1,4 @@
+import ServiceModel from "../models/ServiceModel.js";
 import SliderModel from "../models/SliderModel.js";
 import TeamModel from "../models/TeamModel.js";
 import BlogModel from "./../models/BlogModel.js";
@@ -416,4 +417,103 @@ export const DeleteTeamService = async (req) => {
     };
   }
 };
+// ...................................................................................................
+export const CreateServiceService = async (req) => {
+  try {
+    const { title, description, image } = req.body;
+
+    if (!title || !description || !image) {
+      return {
+        status: 400,
+        success: false,
+        error: true,
+        message: "All fields are required",
+      };
+    }
+    const findService = await ServiceModel.findOne({});
+    if (findService) {
+      const update = await ServiceModel.findOneAndUpdate(
+        { _id: findService._id },
+        {
+          title,
+          description,
+          image,
+        },
+        { new: true }
+      );
+      return {
+        status: 200,
+        success: true,
+        error: false,
+        message: "Service updated successfully",
+        data: update,
+      };
+    } else {
+      const Service = await ServiceModel.create({
+        title,
+        description,
+        image,
+      });
+      return {
+        status: 201,
+        success: true,
+        error: false,
+        message: "Service Created Successfully",
+        data: Service,
+      };
+    }
+  } catch (e) {
+    return {
+      status: 500,
+      success: false,
+      error: true,
+      message: e.message || "Something went wrong",
+    };
+  }
+};
+
+export const GetServiceService = async (req) => {
+  try {
+    const findBlog = await ServiceModel.find({});
+    return {
+      status: 200,
+      success: true,
+      error: false,
+      message: "Service Read successfully",
+      data: findBlog,
+    };
+  } catch {
+    return {
+      status: 500,
+      success: false,
+      error: true,
+      message: "Something went wrong",
+    };
+  }
+};
+
+export const DeleteServiceService = async (req) => {
+  try {
+    const { id } = req.params;
+
+    const Service = await ServiceModel.deleteOne({ _id: id });
+
+    return {
+      status: 201,
+      success: true,
+      error: false,
+      message: "Service Deleted Successfully",
+      data: Service,
+    };
+  } catch (e) {
+    return {
+      status: 500,
+      success: false,
+      error: true,
+      message: e.message || "Something went wrong",
+    };
+  }
+};
+// ...................................................................................................
+
 // ...................................................................................................
