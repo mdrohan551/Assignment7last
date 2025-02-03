@@ -24,10 +24,16 @@ router.get('/read-blog-home',SectionController.GetBlogHomeController);
 router.get('/read-single-blog/:slug',SectionController.ReadSingleBlogController);
 
 // Create Slider
-
 router.post('/create-slider',AuthMiddleware,SectionController.CreateSliderController);
 
 router.get('/read-slider',SectionController.ReadSliderController);
+
+// Create Team 
+router.post('/create-team',AuthMiddleware,SectionController.CreateTeamController);
+router.post('/update-team/:id',AuthMiddleware,SectionController.UpdateTeamController);
+router.get('/delete-team/:id',AuthMiddleware,SectionController.DeleteTeamController);
+
+router.get('/read-team',SectionController.ReadTeamController);
 
 
 

@@ -1,4 +1,5 @@
 import SliderModel from "../models/SliderModel.js";
+import TeamModel from "../models/TeamModel.js";
 import BlogModel from "./../models/BlogModel.js";
 
 export const CreateBlogService = async (req) => {
@@ -185,6 +186,131 @@ export const GetSliderService = async (req) => {
       success: false,
       error: true,
       message: "Something went wrong",
+    };
+  }
+};
+
+export const CreateTeamService = async (req) => {
+  try {
+    const { name, designation, image } = req.body;
+
+    if (!name || !designation || !image) {
+      return {
+        status: 400,
+        success: false,
+        error: true,
+        message: "All fields are required",
+      };
+    }
+    const team = await TeamModel.create({
+      name,
+      designation,
+      image,
+    });
+    return {
+      status: 201,
+      success: true,
+      error: false,
+      message: "Team member created successfully",
+      data: team,
+    };
+  } catch (e) {
+    return {
+      status: 500,
+      success: false,
+      error: true,
+      message: e.message || "Something went wrong",
+    };
+  }
+};
+
+export const GetTeamService = async (req) => {
+  try {
+    const findBlog = await TeamModel.find({});
+    return {
+      status: 200,
+      success: true,
+      error: false,
+      message: "Blog Read successfully",
+      data: findBlog,
+    };
+  } catch {
+    return {
+      status: 500,
+      success: false,
+      error: true,
+      message: "Something went wrong",
+    };
+  }
+};
+
+export const UpdateTeamService = async (req) => {
+  try {
+    const { id } = req.params;
+    const { name, designation, image } = req.body;
+    if (!id) {
+      return {
+        status: 400,
+        success: false,
+        error: true,
+        message: "Id is required",
+      };
+    }
+
+    const team = await TeamModel.findOneAndUpdate(
+      { _id: id },
+      {
+        name,
+        designation,
+        image,
+      },
+      { new: true }
+    );
+
+    return {
+      status: 201,
+      success: true,
+      error: false,
+      message: "Team member Updated successfully",
+      data: team,
+    };
+  } catch (e) {
+    return {
+      status: 500,
+      success: false,
+      error: true,
+      message: e.message || "Something went wrong",
+    };
+  }
+};
+
+export const DeleteTeamService = async (req) => {
+  try {
+    const { id } = req.params;
+    if (!id) {
+      return {
+        status: 400,
+        success: false,
+        error: true,
+        message: "Id is required",
+      };
+    }
+
+    const team = await TeamModel.deleteOne({ _id: id });
+
+    return {
+      status: 201,
+      success: true,
+      error: false,
+      message: "Team Member Deleted Successfully",
+      data: team,
+    };
+  } catch (e) {
+    return {
+      status: 500,
+      success: false,
+      error: true,
+      message: e.message || "Something went wrong",
     };
   }
 };
