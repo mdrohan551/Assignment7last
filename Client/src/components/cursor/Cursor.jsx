@@ -1,42 +1,34 @@
-import React, {useEffect, useState} from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+
 const Cursor = (props) => {
-    const [cursor, setCursor] = useState({x: 0, y: 0});
-    console.log(cursor)
+    const [cursor, setCursor] = useState({ x: 0, y: 0 });
+
     useEffect(() => {
         const moveMouse = (e) => {
-            const x = e.clientX
-            const y = e.clientY
-            setCursor({x: x, y: y});
-
+            setCursor({ x: e.clientX, y: e.clientY });
         };
 
-        window.addEventListener('mousemove', moveMouse);
+        window.addEventListener("mousemove", moveMouse);
         return () => {
-            window.removeEventListener('mousemove', moveMouse);
+            window.removeEventListener("mousemove", moveMouse);
         };
-
     }, []);
 
-    const variants={
-         default: {
-             x:cursor.x - 16,
-             y:cursor.y - 16
-         }
-    }
-
     return (
-        <div>
-            <div className="container">
-                <motion.div className="main_cursor"
-                            variants={variants}
-                            animate={cursor}
-                            style={{...props.style || props.homeStyle,zIndex:"10"}}
-
-
-                ></motion.div>
-            </div>
-        </div>
+        <div
+            className="mainCursor"
+            style={{
+                position: "fixed",
+                left: cursor.x - 10,  // Adjust cursor position
+                top: cursor.y - 10,   // Adjust cursor position
+                width: "20px",        // Cursor size
+                height: "20px",       // Cursor size
+                backgroundColor: "red", // Cursor color
+                pointerEvents: "none", // Prevent interaction with cursor
+                clipPath: "polygon(82% 72%, 41% 64%, 12% 95%, 23% 6%)", // Custom shape
+                ...props.style, // Apply any extra styles passed as props
+            }}
+        />
     );
 };
 

@@ -2,7 +2,13 @@
 
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+const Blogpage = lazy(() => import('./pages/Blogpage.jsx'));
+const AboutPage = lazy(() => import('./pages/AboutPage.jsx'));
 const HomePage = lazy(() => import('./pages/HomePage'));
+const ServicesPage = lazy(() => import('./pages/ServicesPage.jsx'));
+const ContactPage = lazy(() => import('./pages/ContactPage.jsx'));
+
 
 const App = () => {
     return (
@@ -10,7 +16,10 @@ const App = () => {
            <Suspense fallback={<div>Loading...</div>}>
                <Routes>
                    <Route path='/' element={<HomePage/>}/>
-                   {/* <Route path='/create' element={<CreatePage/>}/> */}
+                    <Route path='/about' element={<AboutPage/>}/>
+                    <Route path='/blog' element={<Blogpage/>}/>
+                    <Route path='/service' element={<ServicesPage/>}/>
+                    <Route path='/contact' element={<ContactPage/>}/>
                </Routes>
            </Suspense>
        </BrowserRouter>
