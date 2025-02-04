@@ -3,24 +3,6 @@ import { Link } from "react-router-dom";
 import Cursor from "../components/cursor/Cursor.jsx";
 
 const Nav = () => {
-    const [dynamicstyle,setDynamicstyle] = useState({});
-    let mouseHover =()=>{
-        setDynamicstyle({
-            mixBlendMode: "difference",
-            backgroundColor: "red",
-            width: '20px',
-            height: '20px',
-            borderRadius: '30px',
-            transition:"none",
-            clipPath:"polygon(82% 72%, 41% 64%, 12% 95%, 23% 6%)",
-
-
-
-        })
-    }
-    let disHover = () => {
-        setDynamicstyle(null);  // Reset to default position
-    };
 
 
 
@@ -94,19 +76,16 @@ const Nav = () => {
                     </div>
                     <div className={`main_menu ${menuActive ? "active" : ""}`} ref={menuRef}>
                         <ul>
-                            <li onMouseEnter={mouseHover} onMouseLeave={disHover}><Link to="/" onClick={closeMenu}>Home</Link></li>
-                            <li onMouseEnter={mouseHover} onMouseLeave={disHover}><Link to="/about" onClick={closeMenu}>About us</Link></li>
-                            <li onMouseEnter={mouseHover} onMouseLeave={disHover}><Link to="/blog" onClick={closeMenu}>Blog</Link></li>
-                            <li onMouseEnter={mouseHover} onMouseLeave={disHover}><Link to="/service" onClick={closeMenu}>Service</Link></li>
-                            <li onMouseEnter={mouseHover} onMouseLeave={disHover}><Link to="/contact" onClick={closeMenu}>Contact us</Link></li>
+                            <li><Link to="/" onClick={closeMenu}>Home</Link></li>
+                            <li><Link to="/about" onClick={closeMenu}>About us</Link></li>
+                            <li><Link to="/blog" onClick={closeMenu}>Blog</Link></li>
+                            <li><Link to="/service" onClick={closeMenu}>Service</Link></li>
+                            <li><Link to="/contact" onClick={closeMenu}>Contact us</Link></li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <Cursor
-            style={dynamicstyle}
-
-            />
+            <Cursor/>
         </header>
     );
 };
