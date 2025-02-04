@@ -1,6 +1,6 @@
-/**{*/
-/*    cursor: none !important;*/
-/*}*/
+*{
+   cursor: none !important;
+}
 
 .mainCursor{
     position: fixed;
