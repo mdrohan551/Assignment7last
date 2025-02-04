@@ -5,7 +5,13 @@ const fileStorageEngine = multer.diskStorage({
     cb(null, "./uploads");
   },
   filename: (req, file, cb) => {
-    cb(null, "api-img__" + Date.now() + "-" + file.originalname);
+    cb(
+      null,
+      "api-img__" +
+        Date.now() +
+        "-" +
+        file.originalname.trim().replace(/\ /g, "")
+    );
   },
 });
 

@@ -2,7 +2,7 @@ import UserModel from "../models/UserModel.js";
 import {
   loginUserService,
   registrationService,
-  uploadMulterAvatarService,
+  uploadMulterService,
 } from "../services/Services.js";
 
 export const registration = async (req, res) => {
@@ -74,11 +74,12 @@ export const logoutUser = async (req, res) => {
 };
 
 // Use Multer File Upload Controller
-export const uploadMulterAvatar = async (req, res) => {
-  let result = await uploadMulterAvatarService(req);
+export const uploadMulter = async (req, res) => {
+  let result = await uploadMulterService(req);
   return res.status(result.status).json({
     success: result.success,
     error: result.error,
     message: result.message,
+    data: result.data,
   });
 };

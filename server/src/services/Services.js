@@ -101,30 +101,26 @@ export const loginUserService = async (req) => {
   }
 };
 
-export const uploadMulterAvatarService = async (req) => {
+export const uploadMulterService = async (req) => {
   try {
-    const userId = req.headers.user_id; // Auth Middleware
-    const avatar = req.file; // multer Middleware
-    if (!avatar) {
+    if (!req.file) {
       return {
         status: 400,
         success: false,
         error: true,
-        message: "No avatar provided",
+        message: "No file provided",
       };
     }
-
-    const fileName = avatar.filename;
-
-    const updateUser = await UserModel.findByIdAndUpdate(userId, {
-      avatar: fileName,
-    });
-    
+    const url =req.file.path.replace(/\\/g, "/");
     return {
       status: 200,
       success: true,
       error: false,
-      message: "User Avatar uploaded successfully",
+      message: "File uploaded successfully",
+      data: {
+        url: url,
+        filename: req.file.originalname,
+      },
     };
   } catch (err) {
     return {

@@ -7,7 +7,7 @@ import rateLimit from "express-rate-limit";
 import xss from "xss-clean";
 import hpp from "hpp";
 import path from "path";
-import body_parser from 'body-parser';
+import body_parser from "body-parser";
 
 // Import Essential Filesystem
 import router from "./src/routes/api.js";
@@ -52,7 +52,7 @@ app.set("etag", WEB_CACHE === "true");
 // MongoDB Connection
 
 // Set API Routes
-app.use("/api/v1", router);  // Notice the change here
+app.use("/api/v1", router); // Notice the change here
 
 app.get("/", (request, response) => {
   // Server to client
@@ -61,7 +61,7 @@ app.get("/", (request, response) => {
   });
 });
 
-app.use("/api/v1/uploads-file", express.static("uploads"));
+app.use("/uploads", express.static("uploads"));
 
 app.all("*", (req, res) => {
   res.status(404).json({
