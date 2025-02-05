@@ -383,6 +383,21 @@ ul {
         padding-bottom: 2rem;
     }
 }
+.img-fixed {
+    width: 100%;
+    height: auto; /* Adjusts height dynamically based on aspect ratio */
+    max-height: 250px; /* Ensures it doesn’t get too big */
+    object-fit: contain; /* Ensures the whole image is visible without cropping */
+    border-radius: 10px; /* Smooth edges */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background-color: #f8f8f8; /* Prevents empty spaces from looking awkward */
+}
+
+/* Hover effect */
+.img-fixed:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
 
 
 /*=========================================about team==============================*/
