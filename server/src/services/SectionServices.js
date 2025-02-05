@@ -19,8 +19,8 @@ export const CreateBlogService = async (req) => {
     let slugCre = title
       .toLowerCase()
       .trim()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/^-+|-+$/g, "");
+      .replace(/[^\p{L}\p{N}]+/gu, "-") // Supports Unicode (বাংলা, হিন্দি, আরবি, চীনা)
+      .replace(/^-+|-+$/g, ""); // Removes leading & trailing hyphens
 
     let find = await BlogModel.findOne({ slug: slugCre });
     if (find) {
@@ -79,8 +79,8 @@ export const UpdateBlogService = async (req) => {
       slugCre = title
         .toLowerCase()
         .trim()
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/^-+|-+$/g, "");
+        .replace(/[^\p{L}\p{N}]+/gu, "-") // Supports Unicode (বাংলা, হিন্দি, আরবি, চীনা)
+        .replace(/^-+|-+$/g, ""); // Removes leading & trailing hyphens
 
       // Check if new slug already exists (excluding current blog)
       let slugExists = await BlogModel.findOne({
