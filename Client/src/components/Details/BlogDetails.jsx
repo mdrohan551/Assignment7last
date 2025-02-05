@@ -2,12 +2,10 @@ import React from 'react';
 import GetDataStore from "../../store/GetDataStore.js";
 
 const BlogDetails = () => {
-    const {detailsBLog} = GetDataStore()
-    let img = `http://localhost:4000/${detailsBLog?.data?.image}`
-
+    const {detailsBLog,imgURl} = GetDataStore()
+    let img = `${imgURl}/${detailsBLog?.data?.image}`
     console.log(img);
     return (
-
         <div>
             <div className="blog">
                 <div className="row">
@@ -18,7 +16,6 @@ const BlogDetails = () => {
                                 className="img_details"
                                 alt="blog_img"
                             />
-
                         </div>
                     </div>
                     <div className="col-12">
@@ -28,9 +25,7 @@ const BlogDetails = () => {
                                     {detailsBLog?.data?.title}<sub
                                     className="fw-normal"> ~ {detailsBLog?.data?.author}</sub>
                                 </h1>
-
                             </blockquote>
-
                             <div className="meta">
                                 <span className="pt-3"> <cite> {detailsBLog?.data?.category}</cite></span>
                             </div>
