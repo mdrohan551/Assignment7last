@@ -23,18 +23,18 @@ import {
 const app = express();
 
 // Global Application Middleware
+app.use(express.json({ limit: Max_JSON_SIZE }));
+app.use(express.urlencoded({ extended: URL_ENCODER }));
+app.use(hpp());
+app.use(cookieParser());
+app.use(xss());
+
 const corsOptions = {
   origin: "*", // সব জায়গা থেকে এক্সেস করতে দিবে
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   allowedHeaders: ["Content-Type", "Authorization"],
 };
 app.use(cors(corsOptions));
-
-app.use(express.json({ limit: Max_JSON_SIZE }));
-app.use(express.urlencoded({ extended: URL_ENCODER }));
-app.use(hpp());
-app.use(cookieParser());
-
 app.use(
   helmet({
     contentSecurityPolicy: {
@@ -42,17 +42,9 @@ app.use(
         defaultSrc: ["'self'"],
         imgSrc: ["*"],
       },
-    }
+    },
   })
 );
-// Helmet configuration with simplified security headers for static file serving
-// app.use(helmet({
-//   contentSecurityPolicy: false,  // Disabling CSP to avoid blocking static content
-//   crossOriginEmbedderPolicy: false,  // Allow cross-origin content
-
-// }));
-
-app.use(xss());
 
 // Rate Limiting middleware
 const limiter = rateLimit({
@@ -77,13 +69,15 @@ app.get("/", (request, response) => {
 });
 
 // Static file serving for uploads with CORS headers
-app.use("/uploads", express.static("uploads", {
-  setHeaders: (res) => {
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Cross-Origin-Resource-Policy", "cross-origin"); // Important for images
-  },
-}));
-
+app.use(
+  "/uploads",
+  express.static("uploads", {
+    setHeaders: (res) => {
+      res.setHeader("Access-Control-Allow-Origin", "*");
+      res.setHeader("Cross-Origin-Resource-Policy", "cross-origin"); // Important for images
+    },
+  })
+);
 
 app.all("*", (req, res) => {
   res.status(404).json({
@@ -94,11 +88,11 @@ app.all("*", (req, res) => {
 });
 
 // Serve static files from the React app (if needed)
-// app.use(express.static("client/dist"));
+app.use(express.static("client/dist"));
 
 // Add React Front End Routing (if needed)
-// app.get("*", function (req, res) {
-//   res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
-// });
+app.get("*", function (req, res) {
+  res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
+});
 
 export default app;
