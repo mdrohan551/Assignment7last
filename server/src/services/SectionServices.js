@@ -128,7 +128,6 @@ export const UpdateBlogService = async (req) => {
   }
 };
 
-
 export const DeleteBlogService = async (req) => {
   try {
     const { id } = req.params;
@@ -432,39 +431,79 @@ export const CreateServiceService = async (req) => {
         message: "All fields are required",
       };
     }
-    const findService = await ServiceModel.findOne({});
-    if (findService) {
-      const update = await ServiceModel.findOneAndUpdate(
-        { _id: findService._id },
-        {
-          title,
-          description,
-          image,
-        },
-        { new: true }
-      );
+    const Service = await ServiceModel.create({
+      title,
+      description,
+      image,
+    });
+    return {
+      status: 201,
+      success: true,
+      error: false,
+      message: "Service Created Successfully",
+      data: Service,
+    };
+  } catch (e) {
+    if (e.code === 11000) {
       return {
-        status: 200,
-        success: true,
-        error: false,
-        message: "Service updated successfully",
-        data: update,
+        status: 400,
+        success: false,
+        error: true,
+        message: "Service with this title already exists",
       };
-    } else {
-      const Service = await ServiceModel.create({
+    }
+    return {
+      status: 500,
+      success: false,
+      error: true,
+      message: e.message || "Something went wrong",
+    };
+  }
+};
+
+export const UpdateServiceService = async (req) => {
+  try {
+    const { id } = req.params;
+    const { title, description, image } = req.body;
+
+    // Blog Exist Check
+    const existinService = await ServiceModel.findById(id);
+    if (!existinService) {
+      return {
+        status: 404,
+        success: false,
+        error: true,
+        message: "Service not found",
+      };
+    }
+
+    // Update Blog
+    const updatedService = await ServiceModel.findByIdAndUpdate(
+      id,
+      {
         title,
         description,
         image,
-      });
+      },
+      { new: true }
+    );
+
+    return {
+      status: 200,
+      success: true,
+      error: false,
+      message: "Service updated successfully",
+      data: updatedService,
+    };
+  } catch (e) {
+    if (e.code === 11000) {
       return {
-        status: 201,
-        success: true,
-        error: false,
-        message: "Service Created Successfully",
-        data: Service,
+        status: 400,
+        success: false,
+        error: true,
+        message: "Service with this title already exists",
       };
     }
-  } catch (e) {
     return {
       status: 500,
       success: false,

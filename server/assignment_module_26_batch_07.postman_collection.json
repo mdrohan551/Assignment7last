@@ -451,7 +451,7 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": "/C:/Users/User/Pictures/Md Fawjul Azim pic.jpg"
+									"src": "/C:/Users/User/Desktop/a.jpg"
 								}
 							]
 						},
@@ -606,7 +606,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Blog Title 02\",\r\n    \"content\": \"Full blog content...\",\r\n    \"image\": \"https://example.com/image.jpg\",\r\n    \"author\": \"Author Name\",\r\n    \"category\": \"Technology\"\r\n}",
+							"raw": "{\r\n    \"title\": \"একটি গ্রাম্য বাজার ও আমার কেনাকাটা\",\r\n    \"content\": \"বন্ধুরা,জীবনধারণের জন্য মানুষকে প্রতিনিয়ত ছুটতে হয়।মানুষের জীবন কখনোই স্থির হতে পারে না,মানুষ সর্বদাই চলমান।চলার পথে অনেক বাধা বিপত্তি আসলেও জীবনধারণের জন্য মানুষকে সামনে এগিয়ে যেতে হয়।আমিও এর ব্যতিক্রম নই।জীবনধারণের জন্য আমাকেও প্রতিনিয়ত জীবনের সাথে যুদ্ধ করে চলতে হয়।অনেক সময় বাধা বিপত্তি আসলেও আমাকেও জীবনধারণের জন্য সামনে এগিয়ে যেতে হয়।আমাদের বেঁচে থাকার জন্য সর্বদা নিত্যপ্রয়োজনীয় অনেক জিনিসের প্রয়োজন হয়।জীবনধারণের জন্য আমাদের এমন কিছু নিত্য প্রয়োজনীয় জিনিসের প্রয়োজন হয় যা আনতেই হবে।আর এসব নিত্যপ্রয়োজনীয় জিনিস আনতে আমাদের বিভিন্ন জায়গায় যেতে হয়।এগুলো আমাদের বাড়িতে এসে কেউ পৌঁছে দেবে না, আমার জিনিস আমাকেই আনতে হবে।বাংলায় একটি কথা আছে যার পেটব্যথা তাকেই সবকিছু করতে হবে।\",\r\n    \"image\": \"uploads/api-img__1738771165145-cyxkEVqiiLy5czPNg6acYev351Du9gQgrBvuGckPjfrzB3wgPvY5sTmaAbw73jqvyi62r2Lfeo7hj61LMYdViaHaZxg6BgvLQaRYdiZspsZoQVJiLSqWnjaJKsYAX2CAKUA.jpg\",\r\n    \"author\": \"Azim\",\r\n    \"category\": \"Random blog\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -753,7 +753,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Blog Title\",\r\n    \"content\": \"Full blog hi content...\",\r\n    \"image\": \"https://example.com/image.jpg\",\r\n    \"author\": \"Author Name\",\r\n    \"category\": \"Technology\"\r\n}",
+							"raw": "{\r\n    \"title\": \"একটি গ্রাম্য বাজার ও আমার কেনাকাটা\",\r\n    \"content\": \"বন্ধুরা,জীবনধারণের জন্য মানুষকে প্রতিনিয়ত ছুটতে হয়।মানুষের জীবন কখনোই স্থির হতে পারে না,মানুষ সর্বদাই চলমান।চলার পথে অনেক বাধা বিপত্তি আসলেও জীবনধারণের জন্য মানুষকে সামনে এগিয়ে যেতে হয়।আমিও এর ব্যতিক্রম নই।জীবনধারণের জন্য আমাকেও প্রতিনিয়ত জীবনের সাথে যুদ্ধ করে চলতে হয়।অনেক সময় বাধা বিপত্তি আসলেও আমাকেও জীবনধারণের জন্য সামনে এগিয়ে যেতে হয়।আমাদের বেঁচে থাকার জন্য সর্বদা নিত্যপ্রয়োজনীয় অনেক জিনিসের প্রয়োজন হয়।জীবনধারণের জন্য আমাদের এমন কিছু নিত্য প্রয়োজনীয় জিনিসের প্রয়োজন হয় যা আনতেই হবে।আর এসব নিত্যপ্রয়োজনীয় জিনিস আনতে আমাদের বিভিন্ন জায়গায় যেতে হয়।এগুলো আমাদের বাড়িতে এসে কেউ পৌঁছে দেবে না, আমার জিনিস আমাকেই আনতে হবে।বাংলায় একটি কথা আছে যার পেটব্যথা তাকেই সবকিছু করতে হবে।\",\r\n    \"image\": \"uploads/api-img__1738771777179-a.jpg\",\r\n    \"author\": \"Azim\",\r\n    \"category\": \"Random blog\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -761,13 +761,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASE}}/update-blog/67a10885038d7728ef3c9aa2",
+							"raw": "{{BASE}}/update-blog/67a38ce2a257f9531258e97d",
 							"host": [
 								"{{BASE}}"
 							],
 							"path": [
 								"update-blog",
-								"67a10885038d7728ef3c9aa2"
+								"67a38ce2a257f9531258e97d"
 							]
 						}
 					},
@@ -2275,13 +2275,13 @@
 			"name": "Services Page",
 			"item": [
 				{
-					"name": "Create & Update Service",
+					"name": "Create Service",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Service\",\r\n    \"description\": \"Full blog contefnt...\",\r\n    \"image\": \"https://example.com/image.jpg\"\r\n}",
+							"raw": "{\r\n    \"title\": \"Servicess\",\r\n    \"description\": \"Full blog contefnt...\",\r\n    \"image\": \"https://example.com/image.jpg\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2306,7 +2306,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"title\": \"Service\",\r\n    \"description\": \"Full blog contefnt...\",\r\n    \"image\": \"https://example.com/image.jpg\"\r\n}",
+									"raw": "{\r\n    \"title\": \"Servicess\",\r\n    \"description\": \"Full blog contefnt...\",\r\n    \"image\": \"https://example.com/image.jpg\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2332,12 +2332,8 @@
 									"value": "*"
 								},
 								{
-									"key": "Access-Control-Allow-Credentials",
-									"value": "true"
-								},
-								{
 									"key": "Content-Security-Policy",
-									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+									"value": "default-src 'self';img-src *;base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
 								},
 								{
 									"key": "Cross-Origin-Opener-Policy",
@@ -2389,15 +2385,15 @@
 								},
 								{
 									"key": "X-RateLimit-Remaining",
-									"value": "94"
+									"value": "99"
 								},
 								{
 									"key": "Date",
-									"value": "Mon, 03 Feb 2025 18:48:05 GMT"
+									"value": "Wed, 05 Feb 2025 17:42:24 GMT"
 								},
 								{
 									"key": "X-RateLimit-Reset",
-									"value": "1738609328"
+									"value": "1738778245"
 								},
 								{
 									"key": "Content-Type",
@@ -2405,7 +2401,7 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "287"
+									"value": "289"
 								},
 								{
 									"key": "Connection",
@@ -2417,8 +2413,36 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"error\": false,\n    \"message\": \"Service Created Successfully\",\n    \"data\": {\n        \"title\": \"Service\",\n        \"description\": \"Full blog contefnt...\",\n        \"image\": \"https://example.com/image.jpg\",\n        \"_id\": \"67a10f65266e795643abaaef\",\n        \"createdAt\": \"2025-02-03T18:48:05.436Z\",\n        \"updatedAt\": \"2025-02-03T18:48:05.436Z\"\n    }\n}"
+							"body": "{\n    \"success\": true,\n    \"error\": false,\n    \"message\": \"Service Created Successfully\",\n    \"data\": {\n        \"title\": \"Servicess\",\n        \"description\": \"Full blog contefnt...\",\n        \"image\": \"https://example.com/image.jpg\",\n        \"_id\": \"67a3a3006f2a9e23abba6e35\",\n        \"createdAt\": \"2025-02-05T17:42:24.391Z\",\n        \"updatedAt\": \"2025-02-05T17:42:24.391Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Service",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Service\",\r\n    \"description\": \"Full blog contefnt...\",\r\n    \"image\": \"https://example.com/image.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
+						"url": {
+							"raw": "{{BASE}}/update-service/67a39f2e7ec0af5f735f717b",
+							"host": [
+								"{{BASE}}"
+							],
+							"path": [
+								"update-service",
+								"67a39f2e7ec0af5f735f717b"
+							]
+						}
+					},
+					"response": [
 						{
 							"name": "Update Service Route",
 							"originalRequest": {
@@ -2434,12 +2458,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{BASE}}/create-service",
+									"raw": "{{BASE}}/update-service/67a39f2e7ec0af5f735f717b",
 									"host": [
 										"{{BASE}}"
 									],
 									"path": [
-										"create-service"
+										"update-service",
+										"67a39f2e7ec0af5f735f717b"
 									]
 								}
 							},
@@ -2452,12 +2477,8 @@
 									"value": "*"
 								},
 								{
-									"key": "Access-Control-Allow-Credentials",
-									"value": "true"
-								},
-								{
 									"key": "Content-Security-Policy",
-									"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+									"value": "default-src 'self';img-src *;base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
 								},
 								{
 									"key": "Cross-Origin-Opener-Policy",
@@ -2513,11 +2534,11 @@
 								},
 								{
 									"key": "Date",
-									"value": "Mon, 03 Feb 2025 18:48:57 GMT"
+									"value": "Wed, 05 Feb 2025 17:44:55 GMT"
 								},
 								{
 									"key": "X-RateLimit-Reset",
-									"value": "1738609328"
+									"value": "1738778362"
 								},
 								{
 									"key": "Content-Type",
@@ -2537,7 +2558,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"error\": false,\n    \"message\": \"Service updated successfully\",\n    \"data\": {\n        \"_id\": \"67a10f65266e795643abaaef\",\n        \"title\": \"Service\",\n        \"description\": \"Full blog contefnt...\",\n        \"image\": \"https://example.com/image.jpg\",\n        \"createdAt\": \"2025-02-03T18:48:05.436Z\",\n        \"updatedAt\": \"2025-02-03T18:48:57.469Z\"\n    }\n}"
+							"body": "{\n    \"success\": true,\n    \"error\": false,\n    \"message\": \"Service updated successfully\",\n    \"data\": {\n        \"_id\": \"67a39f2e7ec0af5f735f717b\",\n        \"title\": \"Service\",\n        \"description\": \"Full blog contefnt...\",\n        \"image\": \"https://example.com/image.jpg\",\n        \"createdAt\": \"2025-02-05T17:26:06.681Z\",\n        \"updatedAt\": \"2025-02-05T17:44:55.348Z\"\n    }\n}"
 						}
 					]
 				},

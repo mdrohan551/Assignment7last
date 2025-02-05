@@ -78,6 +78,11 @@ router.post(
   AuthMiddleware,
   SectionController.CreateServiceController
 );
+router.post(
+  "/update-service/:id",
+  AuthMiddleware,
+  SectionController.UpdateServiceController
+);
 router.get(
   "/delete-service/:id",
   AuthMiddleware,
