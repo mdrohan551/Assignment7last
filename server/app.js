@@ -24,19 +24,34 @@ const app = express();
 
 // Global Application Middleware
 const corsOptions = {
-  origin: "*",
-  credentials: true,
+  origin: "*", // সব জায়গা থেকে এক্সেস করতে দিবে
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  allowedHeaders: ["Content-Type", "Authorization"],
 };
 app.use(cors(corsOptions));
+
 app.use(express.json({ limit: Max_JSON_SIZE }));
 app.use(express.urlencoded({ extended: URL_ENCODER }));
 app.use(hpp());
 app.use(cookieParser());
+
 app.use(
   helmet({
-    crossOriginEmbedderPolicy: false,
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        imgSrc: ["*"],
+      },
+    }
   })
 );
+// Helmet configuration with simplified security headers for static file serving
+// app.use(helmet({
+//   contentSecurityPolicy: false,  // Disabling CSP to avoid blocking static content
+//   crossOriginEmbedderPolicy: false,  // Allow cross-origin content
+
+// }));
+
 app.use(xss());
 
 // Rate Limiting middleware
@@ -52,7 +67,7 @@ app.set("etag", WEB_CACHE === "true");
 // MongoDB Connection
 
 // Set API Routes
-app.use("/api/v1", router); // Notice the change here
+app.use("/api/v1", router);
 
 app.get("/", (request, response) => {
   // Server to client
@@ -61,7 +76,14 @@ app.get("/", (request, response) => {
   });
 });
 
-app.use("/uploads", express.static("uploads"));
+// Static file serving for uploads with CORS headers
+app.use("/uploads", express.static("uploads", {
+  setHeaders: (res) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Cross-Origin-Resource-Policy", "cross-origin"); // Important for images
+  },
+}));
+
 
 app.all("*", (req, res) => {
   res.status(404).json({
@@ -71,10 +93,10 @@ app.all("*", (req, res) => {
   });
 });
 
-// Serve static files from the React app
+// Serve static files from the React app (if needed)
 // app.use(express.static("client/dist"));
 
-// Add React Front End Routing
+// Add React Front End Routing (if needed)
 // app.get("*", function (req, res) {
 //   res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
 // });

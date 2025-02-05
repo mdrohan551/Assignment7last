@@ -16,23 +16,27 @@
         h1 {
             font-size: clamp(1.2rem, 4vw, 5rem) !important;
         }
+        .paragrap{
+            font-size:.8rem !important;
+        }
     }
 
 
     .Hero_image {
         position: relative;
-        width: 10rem !important;
-        height: 15rem !important;
+        width: 15rem !important;
+        height: 20rem !important;
 
 
     }
 
     .Hero_image .img_bg {
-        width: 10rem !important;
+        width: 100% !important;
         border: none !important;
-        height: 8rem !important;
+        height: 100% !important;
         background: var(--hover) !important;
-        border-radius: 50% 0 0 0 !important;
+        border-radius: 50%  !important;
+        right: 0;
 
     }
 
@@ -126,99 +130,15 @@
     .about_text h1 {
         font-size: calc(1rem + 1.5vw);
     }
-    img,
-    svg {
-        vertical-align: middle;
-        width: 132px;
+    .blog_img .img_details {
+        height: auto !important;
     }
-
-    #crose {
-        display: block !important;
-    }
-
-    .manu_icon {
-        margin-top: 20px;
-
-    }
-
-    .manu_icon .bars .line {
-        display: block !important;
-    }
-
-    .bars .line:nth-child(2) {
-        width: 25px !important;
-    }
-
-    #nav .manu_icon .crose {
-        display: none;
-        margin-top: 10px;
-        transition: all linear .3s;
-        -webkit-transition: all linear .3s;
-        -moz-transition: all linear .3s;
-        -ms-transition: all linear .3s;
-        -o-transition: all linear .3s;
-    }
-
-    .main_menu {
-        position: absolute;
-        height: 260px;
-        top: 75px;
-        right: 0;
-        width: 100%;
-        background: rgba(4, 102, 154, 0.135);
-        backdrop-filter: blur(2px);
-        transform: scaleX(0);
-        transition: all linear .3s;
-        -webkit-transition: all linear .3s;
-        -moz-transition: all linear .3s;
-        -ms-transition: all linear .3s;
-        -o-transition: all linear .3s;
-        transform-origin: right;
-        -webkit-transform: scaleX(0);
-        -moz-transform: scaleX(0);
-        -ms-transform: scaleX(0);
-        -o-transform: scaleX(0);
-        z-index: 1;
-    }
-
-    .main_menu ul {
-        display: block !important;
-        text-align: center;
-        background: rgb(4, 73, 92);
-        padding: 10px 20px;
-        z-index: -1;
-        width: 60%;
-        margin-left: 157px;
-
-    }
-
-    #nav .header .main_menu ul li {
-        padding: 0 5px;
-    }
-
-    #nav .header .main_menu ul li a {
-        color: var(--text);
-        font-weight: 600;
-        font-size: 12px;
-        font-family: var(--font);
-        text-transform: uppercase;
-        padding: 0 0;
-    }
-
-    .active {
-        transform: scaleX(1);
-        -webkit-transform: scaleX(1);
-        -moz-transform: scaleX(1);
-        -ms-transform: scaleX(1);
-        -o-transform: scaleX(1);
-    }
-
     /* banner part ============================== */
 
 }
 
 
-@media (min-width: 375.98px) and (max-width: 390px) {
+@media (min-width: 361.98px) and (max-width: 390px) {
     #Membership {
         box-shadow: 0 105px 90px -21px rgba(0, 0, 0, 0.17);
         padding: 20px 0 68px;
@@ -236,26 +156,52 @@
         h1 {
             font-size: clamp(1.2rem, 4vw, 5rem) !important;
         }
+        .paragrap{
+            font-size:.8rem !important;
+        }
     }
 
 
     .Hero_image {
         position: relative;
-        width: 10rem !important;
-        height: 15rem !important;
-
+        max-width:70% !important;
+        max-height: 20rem !important;
+        margin-left: 12%;
 
     }
 
     .Hero_image .img_bg {
-        width: 10rem !important;
+        width: 22rem !important;
         border: none !important;
-        height: 8rem !important;
-        background: var(--hover) !important;
-        border-radius: 50% 0 0 0 !important;
+        height: 11rem !important;
+        background: var(--hover);
+        border-radius: 80px 0% 0% 0px !important;
+        left: 0% !important;
+        bottom: 0px;
+
 
     }
+    .Hero_image .img_bg:after{
+        content: "";
+        position: absolute;
+        top: -70%;
+        left: 0;
+        width: 40px;
+        height:40px;
+        background: rgba(255, 196, 49, 0.98);
+        border-radius: 5px;
 
+    } .Hero_image .img_bg:before{
+        content: "";
+        position: absolute;
+        top: -62%;
+        left: -7%;
+        width: 50px;
+        height:50px;
+        background: rgba(255, 183, 0, 0.55);
+    border-radius: 5px;
+
+    }
     .manu_icon .bars .line {
         display: block !important;
     }
@@ -346,7 +292,9 @@
     .about_text h1 {
         font-size: calc(1rem + 1.5vw);
     }
-
+    .blog_img .img_details {
+        height: auto !important;
+    }
 }
 
 body {
@@ -497,7 +445,7 @@ body {
         color: var(--text);
         font-weight: 600;
         font-size: 12px;
-        font-family: var(--font);
+        font-family: var(--font), serif;
         text-transform: uppercase;
         padding: 0 0;
     }
@@ -592,6 +540,7 @@ body {
         -ms-transform: scaleX(1);
         -o-transform: scaleX(1);
     }
+
 
 }
 

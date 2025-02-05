@@ -23,7 +23,9 @@ body {
     /*font-family: Roboto,sans-serif;*/
 
 }
-
+img{
+    vertical-align: middle;
+}
 h1,
 h2,
 h3,
@@ -340,19 +342,20 @@ ul {
     height: 50rem; /* Set the height of the image */
     object-fit: contain; /* Crops the image to cover the container, maintaining aspect ratio */
     filter: drop-shadow(0px 0px 40px rgba(95, 0, 255, 0.43));
+
 }
 
 .Hero_image .img_bg {
-    width: 40rem;
+    width: 34rem;
     background: var(--hover);
     transform: scale(1);
     position: absolute;
-    bottom: 0;
-    right: -2%;
+    bottom: -10%;
+    left: 1%;
     z-index: -1;
 
     transition: 1s ease;
-    height: 45rem;
+    height: 5rem;
     border-radius: 10% 10% 10% 10%;
     background: transparent;
     border-bottom: 2px solid var(--hover);
@@ -361,7 +364,11 @@ ul {
     border-top: 2px solid transparent;
 
 }
-
+.Hero_image:hover .img_bg{
+    background: var(--hover);
+    height:34rem;
+    border-radius: 50%;
+}
 
 /*=====================================blog============================*/
 .main_title {

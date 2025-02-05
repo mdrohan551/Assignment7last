@@ -21,11 +21,7 @@ const Cursor = (props) => {
                 position: "fixed",
                 left: cursor.x - 10,  // Adjust cursor position
                 top: cursor.y - 10,   // Adjust cursor position
-                width: "20px",        // Cursor size
-                height: "20px",       // Cursor size
-                backgroundColor: "red", // Cursor color
                 pointerEvents: "none", // Prevent interaction with cursor
-                clipPath: "polygon(82% 72%, 41% 64%, 12% 95%, 23% 6%)", // Custom shape
                 ...props.style, // Apply any extra styles passed as props
             }}
         />
