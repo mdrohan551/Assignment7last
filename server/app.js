@@ -75,6 +75,7 @@ app.get("/", (request, response) => {
     message: "Server is running on port " + PORT,
   });
 });
+// app.use("/uploads", express.static("uploads"));
 
 // Static file serving for uploads with CORS headers
 app.use("/uploads", express.static("uploads", {
