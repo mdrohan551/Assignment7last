@@ -1,3 +1,4 @@
+import AboutModel from "../models/AboutModel.js";
 import ContactModel from "../models/ContactModel.js";
 import ServiceModel from "../models/ServiceModel.js";
 import SliderModel from "../models/SliderModel.js";
@@ -611,3 +612,60 @@ export const GetContactService = async (req) => {
   }
 };
 // ...................................................................................................
+export const CreateAboutService = async (req) => {
+  try {
+    const { name, description, image, socialLinks } = req.body;
+
+    if (!name || !description || !image) {
+      return {
+        status: 400,
+        success: false,
+        error: true,
+        message: "All fields are required",
+      };
+    }
+
+    // Create About Entry
+    const about = await AboutModel.create({
+      name,
+      description,
+      image,
+      socialLinks,
+    });
+
+    return {
+      status: 201,
+      success: true,
+      error: false,
+      message: "About section created successfully",
+      data: about,
+    };
+  } catch (e) {
+    return {
+      status: 500,
+      success: false,
+      error: true,
+      message: e.message || "Something went wrong",
+    };
+  }
+};
+
+export const GetAboutService = async (req) => {
+  try {
+    const findAbout = await AboutModel.find({});
+    return {
+      status: 200,
+      success: true,
+      error: false,
+      message: "About Section Read successfully",
+      data: findAbout,
+    };
+  } catch {
+    return {
+      status: 500,
+      success: false,
+      error: true,
+      message: "Something went wrong",
+    };
+  }
+};

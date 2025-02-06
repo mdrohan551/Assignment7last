@@ -100,4 +100,13 @@ router.get(
   SectionController.ReadContactController
 );
 
+// Create Team
+router.post(
+  "/create-about",
+  AuthMiddleware,
+  SectionController.CreateAboutController
+);
+
+router.get("/read-about", SectionController.ReadAboutController);
+
 export default router;

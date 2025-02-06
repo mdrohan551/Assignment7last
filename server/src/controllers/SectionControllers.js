@@ -1,5 +1,6 @@
 import UserModel from "../models/UserModel.js";
 import {
+  CreateAboutService,
   CreateBlogService,
   CreateContactService,
   CreateServiceService,
@@ -8,6 +9,7 @@ import {
   DeleteBlogService,
   DeleteServiceService,
   DeleteTeamService,
+  GetAboutService,
   GetBlogHomeService,
   GetBlogService,
   GetContactService,
@@ -189,6 +191,27 @@ export const CreateContactController = async (req, res) => {
 
 export const ReadContactController = async (req, res) => {
   let result = await GetContactService(req);
+  return res.status(result.status).json({
+    success: result.success,
+    error: result.error,
+    message: result.message,
+    data: result.data,
+  });
+};
+
+// ...................................................................................................
+export const CreateAboutController = async (req, res) => {
+  let result = await CreateAboutService(req);
+  return res.status(result.status).json({
+    success: result.success,
+    error: result.error,
+    message: result.message,
+    data: result.data,
+  });
+};
+
+export const ReadAboutController = async (req, res) => {
+  let result = await GetAboutService(req);
   return res.status(result.status).json({
     success: result.success,
     error: result.error,
