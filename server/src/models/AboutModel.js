@@ -3,12 +3,11 @@ import mongoose from "mongoose";
 const aboutSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
-    description: { type: String, required: true },
+    designation: { type: String, required: true },
     image: { type: String, required: true },
     socialLinks: {
-      facebook: { type: String, default: "#" },
-      linkedin: { type: String, default: "#" },
-      twitter: { type: String, default: "#" },
+      facebook: { type: String, required: true },
+      linkedin: { type: String, required: true },
     },
   },
   { timestamps: true, versionKey: false }

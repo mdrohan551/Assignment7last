@@ -78,11 +78,6 @@ router.post(
   AuthMiddleware,
   SectionController.CreateServiceController
 );
-router.post(
-  "/update-service/:id",
-  AuthMiddleware,
-  SectionController.UpdateServiceController
-);
 router.get(
   "/delete-service/:id",
   AuthMiddleware,
@@ -99,14 +94,5 @@ router.get(
   AuthMiddleware,
   SectionController.ReadContactController
 );
-
-// Create Team
-router.post(
-  "/create-about",
-  AuthMiddleware,
-  SectionController.CreateAboutController
-);
-
-router.get("/read-about", SectionController.ReadAboutController);
 
 export default router;

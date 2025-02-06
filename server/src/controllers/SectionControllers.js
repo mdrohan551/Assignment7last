@@ -1,26 +1,5 @@
 import UserModel from "../models/UserModel.js";
-import {
-  CreateAboutService,
-  CreateBlogService,
-  CreateContactService,
-  CreateServiceService,
-  CreateSliderService,
-  CreateTeamService,
-  DeleteBlogService,
-  DeleteServiceService,
-  DeleteTeamService,
-  GetAboutService,
-  GetBlogHomeService,
-  GetBlogService,
-  GetContactService,
-  GetServiceService,
-  GetSingleBlogService,
-  GetSliderService,
-  GetTeamService,
-  UpdateBlogService,
-  UpdateServiceService,
-  UpdateTeamService,
-} from "../services/SectionServices.js";
+import { CreateBlogService, CreateContactService, CreateServiceService, CreateSliderService, CreateTeamService, DeleteBlogService, DeleteServiceService, DeleteTeamService, GetBlogHomeService, GetBlogService, GetContactService, GetServiceService, GetSingleBlogService, GetSliderService, GetTeamService, UpdateBlogService, UpdateTeamService } from "../services/SectionServices.js";
 
 export const CreateBlogController = async (req, res) => {
   let result = await CreateBlogService(req);
@@ -81,6 +60,7 @@ export const ReadSingleBlogController = async (req, res) => {
   });
 };
 // ...................................................................................................
+
 
 export const CreateSliderController = async (req, res) => {
   let result = await CreateSliderService(req);
@@ -151,15 +131,7 @@ export const CreateServiceController = async (req, res) => {
     data: result.data,
   });
 };
-export const UpdateServiceController = async (req, res) => {
-  let result = await UpdateServiceService(req);
-  return res.status(result.status).json({
-    success: result.success,
-    error: result.error,
-    message: result.message,
-    data: result.data,
-  });
-};
+
 export const ReadServiceController = async (req, res) => {
   let result = await GetServiceService(req);
   return res.status(result.status).json({
@@ -191,27 +163,6 @@ export const CreateContactController = async (req, res) => {
 
 export const ReadContactController = async (req, res) => {
   let result = await GetContactService(req);
-  return res.status(result.status).json({
-    success: result.success,
-    error: result.error,
-    message: result.message,
-    data: result.data,
-  });
-};
-
-// ...................................................................................................
-export const CreateAboutController = async (req, res) => {
-  let result = await CreateAboutService(req);
-  return res.status(result.status).json({
-    success: result.success,
-    error: result.error,
-    message: result.message,
-    data: result.data,
-  });
-};
-
-export const ReadAboutController = async (req, res) => {
-  let result = await GetAboutService(req);
   return res.status(result.status).json({
     success: result.success,
     error: result.error,
