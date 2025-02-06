@@ -1,4 +1,3 @@
-import AboutModel from "../models/AboutModel.js";
 import ContactModel from "../models/ContactModel.js";
 import ServiceModel from "../models/ServiceModel.js";
 import SliderModel from "../models/SliderModel.js";
@@ -432,79 +431,39 @@ export const CreateServiceService = async (req) => {
         message: "All fields are required",
       };
     }
-    const Service = await ServiceModel.create({
-      title,
-      description,
-      image,
-    });
-    return {
-      status: 201,
-      success: true,
-      error: false,
-      message: "Service Created Successfully",
-      data: Service,
-    };
-  } catch (e) {
-    if (e.code === 11000) {
+    const findService = await ServiceModel.findOne({});
+    if (findService) {
+      const update = await ServiceModel.findOneAndUpdate(
+        { _id: findService._id },
+        {
+          title,
+          description,
+          image,
+        },
+        { new: true }
+      );
       return {
-        status: 400,
-        success: false,
-        error: true,
-        message: "Service with this title already exists",
+        status: 200,
+        success: true,
+        error: false,
+        message: "Service updated successfully",
+        data: update,
       };
-    }
-    return {
-      status: 500,
-      success: false,
-      error: true,
-      message: e.message || "Something went wrong",
-    };
-  }
-};
-
-export const UpdateServiceService = async (req) => {
-  try {
-    const { id } = req.params;
-    const { title, description, image } = req.body;
-
-    // Blog Exist Check
-    const existinService = await ServiceModel.findById(id);
-    if (!existinService) {
-      return {
-        status: 404,
-        success: false,
-        error: true,
-        message: "Service not found",
-      };
-    }
-
-    // Update Blog
-    const updatedService = await ServiceModel.findByIdAndUpdate(
-      id,
-      {
+    } else {
+      const Service = await ServiceModel.create({
         title,
         description,
         image,
-      },
-      { new: true }
-    );
-
-    return {
-      status: 200,
-      success: true,
-      error: false,
-      message: "Service updated successfully",
-      data: updatedService,
-    };
-  } catch (e) {
-    if (e.code === 11000) {
+      });
       return {
-        status: 400,
-        success: false,
-        error: true,
-        message: "Service with this title already exists",
+        status: 201,
+        success: true,
+        error: false,
+        message: "Service Created Successfully",
+        data: Service,
       };
     }
+  } catch (e) {
     return {
       status: 500,
       success: false,
@@ -612,60 +571,3 @@ export const GetContactService = async (req) => {
   }
 };
 // ...................................................................................................
-export const CreateAboutService = async (req) => {
-  try {
-    const { name, description, image, socialLinks } = req.body;
-
-    if (!name || !description || !image) {
-      return {
-        status: 400,
-        success: false,
-        error: true,
-        message: "All fields are required",
-      };
-    }
-
-    // Create About Entry
-    const about = await AboutModel.create({
-      name,
-      description,
-      image,
-      socialLinks,
-    });
-
-    return {
-      status: 201,
-      success: true,
-      error: false,
-      message: "About section created successfully",
-      data: about,
-    };
-  } catch (e) {
-    return {
-      status: 500,
-      success: false,
-      error: true,
-      message: e.message || "Something went wrong",
-    };
-  }
-};
-
-export const GetAboutService = async (req) => {
-  try {
-    const findAbout = await AboutModel.find({});
-    return {
-      status: 200,
-      success: true,
-      error: false,
-      message: "About Section Read successfully",
-      data: findAbout,
-    };
-  } catch {
-    return {
-      status: 500,
-      success: false,
-      error: true,
-      message: "Something went wrong",
-    };
-  }
-};
