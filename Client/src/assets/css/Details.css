@@ -16,27 +16,11 @@
     height: 25rem;
     border: 1px solid #e91212;
     border-radius: 30px;
-    filter: drop-shadow(.1rem 0.1rem 7rem #12e98fb7);
+    filter: drop-shadow(.1rem 0.1rem 7rem rgba(233, 133, 18, 0.55));
     margin-bottom: 2rem;
-    animation: shadow 10s forwards;
     opacity: 90%;
 }
 
-
-
-@keyframes shadow {
-    0% {
-        filter: drop-shadow(.1rem 0.1rem 7rem #12e98fb7);
-    }
-
-    50% {
-        filter: drop-shadow(.1rem 0.1rem 7rem #ff0728);
-    }
-
-    100% {
-        filter: drop-shadow(.1rem 0.1rem 7rem #e9e512b7);
-    }
-}
 
 .blog_img::before {
     content: "+";
