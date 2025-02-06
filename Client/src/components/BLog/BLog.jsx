@@ -3,19 +3,37 @@ import useGetDataStore from "../../store/GetDataStore.js";
 import { Link } from "react-router-dom";
 
 const Blog = () => {
-    const { BlogData, imgURl } = useGetDataStore(); // Ensure fetch function is available
+    const { BlogData, imgURl } = useGetDataStore(); 
 
     if (!BlogData || !BlogData.data || BlogData.data.length === 0) {
         return <p>Loading...</p>;
     }
 
-    // Function to truncate content to 80 words
+    // Function to truncate content
     const truncateText = (text, wordLimit) => {
         const words = text.split(" ");
-        if (words.length > wordLimit) {
-            return words.slice(0, wordLimit).join(" ") + "... (Read more)";
-        }
-        return text;
+        return words.length > wordLimit
+            ? words.slice(0, wordLimit).join(" ") + "... Read More"
+            : text;
+    };
+
+    // Function to show time ago
+    const timeAgo = (dateString) => {
+        const now = new Date();
+        const createdDate = new Date(dateString);
+        const diffInSeconds = Math.floor((now - createdDate) / 1000);
+        const diffInMinutes = Math.floor(diffInSeconds / 60);
+        const diffInHours = Math.floor(diffInMinutes / 60);
+        const diffInDays = Math.floor(diffInHours / 24);
+        const diffInMonths = Math.floor(diffInDays / 30);
+        const diffInYears = Math.floor(diffInMonths / 12);
+
+        if (diffInYears > 0) return `${diffInYears} year${diffInYears > 1 ? "s" : ""} ago`;
+        if (diffInMonths > 0) return `${diffInMonths} month${diffInMonths > 1 ? "s" : ""} ago`;
+        if (diffInDays > 0) return `${diffInDays} day${diffInDays > 1 ? "s" : ""} ago`;
+        if (diffInHours > 0) return `${diffInHours} hour${diffInHours > 1 ? "s" : ""} ago`;
+        if (diffInMinutes > 0) return `${diffInMinutes} minute${diffInMinutes > 1 ? "s" : ""} ago`;
+        return "Just now";
     };
 
     return (
@@ -24,24 +42,33 @@ const Blog = () => {
                 <h1>Our Blog</h1>
             </div>
             <div className="container py-5">
-                <div className="row g-3">
+                <div className="row">
                     {BlogData.data.map((item, index) => (
-                        <Link to={`/details/${item.slug}`} key={index} className="col-lg-4 col-6 ">
-                            <div className="card w-100 h-50 ">
-                                <img
-                                    src={`${imgURl}/${item.image}`}
-                                    className="card-img-top img-fixed"
-                                    alt="Blog Image"
-                                />
-
-                                <div className="card-body">
-                                    <h5 className="card-title">{item.title}</h5>
-                                    <p className="card-text">
-                                        {truncateText(item.content, 80)}
-                                    </p>
+                        <div className="col-lg-4 col-md-6 col-12 mb-4" key={index}>
+                            <Link to={`/details/${item.slug}`} className="blog-card">
+                                <div className="cards">
+                                    <div className="headers">
+                                        <div className="images">
+                                            <img
+                                                src={`${imgURl}/${item.image}`}
+                                                className="img"
+                                                alt={item.title}
+                                            />
+                                            <span className="tags">{timeAgo(item.createdAt)}</span>
+                                        </div>
+                                        <div className="dates">
+                                            <span>{item.category}</span>
+                                        </div>
+                                    </div>
+                                    <div className="infos">
+                                        <span className="titles ">{item.title}</span>
+                                        <p className="descriptions">
+                                            {truncateText(item.content, 18)}
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                        </Link>
+                            </Link>
+                        </div>
                     ))}
                 </div>
             </div>
