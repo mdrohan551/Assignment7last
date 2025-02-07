@@ -8,49 +8,36 @@ const CreateBlogs = () => {
     // State to track file upload status
     const [uploading, setUploading] = useState(false);
     const [selectedImage, setSelectedImage] = useState(null);
-
     // Handle Image Upload
     const handleImageUpload = async (e) => {
         const file = e.target.files[0];
-
         if (!file) {
             toast.error("No file selected");
             return;
         }
-
-        console.log("📤 Selected file:", file); // Log file details
-
         setUploading(true); // Set uploading state to true
-
         let res = await multerImage(file);
-
         setUploading(false); // Set uploading state to false after response
         if (res) {
-            console.log("✅ Image uploaded successfully:", res);
             setSelectedImage(res);
             FormChangeBlogs("image", res); // শুধুমাত্র URL পাঠাও
-        } else {
-            console.error("❌ Upload failed.");
         }
     };
 
     // Handle Submit
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         // Validation to ensure all fields are filled
         if (!CreateBlog.title || !CreateBlog.content || !CreateBlog.author || !CreateBlog.category || !CreateBlog.image) {
             toast.error("Please fill in all fields and upload an image.");
             return;
         }
-
         const success = await CreateBLogsrequest(CreateBlog);
         if (success.success === true) {
             toast.success("Blog created successfully!");
         } else {
             toast.error("Blog creation failed!");
         }
-        console.log(success)
     };
 
     return (
