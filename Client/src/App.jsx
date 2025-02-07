@@ -30,7 +30,7 @@ const App = () => {
                    {isLogin()=== true ? (
                        <Route path='/dashboard'  element={<DashBoardPage />} />
                    ) : (
-                       <Route path='/dashboard' element={<ErrorPage />} />
+                       <Route path='/dashboard' element={<HomePage />} />
                    )}
 
                    {/* Catch-All Route for Undefined Pages */}

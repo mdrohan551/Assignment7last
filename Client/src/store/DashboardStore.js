@@ -97,6 +97,81 @@ const DashboardGet = create((set, get) => ({
     },
 
 
+    // Initial State
+    CreateBlog: {
+        title: "",
+        content: "",
+        image: "",
+        author: "",
+        category: ""
+    },
+
+    // Handle Form Change
+    FormChangeBlogs: (name, value) => {
+        set((state) => ({
+            CreateBlog: { ...state.CreateBlog, [name]: value }
+        }));
+    },
+
+    multerImage: async (file) => {
+        try {
+            console.log("📤 Sending image to API:", file); // ✅ API তে পাঠানোর আগে চেক করুন
+
+            const { mainUrl } = get();
+            const token = cookie.get("token");
+            if (!token) {
+                console.error("❌ No token found! Please login again.");
+                return null;
+            }
+
+            const formData = new FormData();
+            formData.append("file", file); // Changed field name from 'image' to 'file'
+
+            const res = await axios.post(`${mainUrl}/upload-file-multer`, formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+
+            if (res.data.success && res.data.data.url) {
+                console.log("✅ API response:", res.data.data.url); // ✅ API থেকে কি আসছে চেক করুন
+                return res.data.data.url;
+            } else {
+                console.error("❌ Upload failed:", res.data.message);
+                return null;
+            }
+        } catch (error) {
+            console.error("❌ Upload error:", error.response?.data || error.message);
+            return null;
+        }
+    },
+
+
+    // Create Blog API (POST request)
+// Create Blog API (POST request)
+    CreateBLogsrequest: async () => {
+        try {
+            const { mainUrl, CreateBlog, token } = get(); // ✅ Make sure token is retrieved
+            if (!token) {
+                console.error("Token is missing! Please login again.");
+                return { success: false, error: "Unauthorized" };
+            }
+
+            const res = await axios.post(`${mainUrl}/api/v1/create-blog`, CreateBlog, {
+                headers: { Authorization: `Bearer ${token}` } // ✅ Send token in headers
+            });
+
+            return res.data;
+        } catch (error) {
+            console.error("Error creating blog:", error.response?.data || error.message);
+            return { success: false, error: true };
+        }
+    }
+
+
+
+
 }));
 
 export default DashboardGet;

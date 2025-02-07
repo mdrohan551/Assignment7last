@@ -8,6 +8,7 @@ import './assets/css/motion.css'
 import './assets/css/Services.css'
 import './assets/css/Contact.css'
 import './assets/css/Details.css'
+import './assets/css/Dashboard.css'
 import './assets/css/Responsive.css'
 
 
