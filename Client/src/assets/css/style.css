@@ -163,6 +163,7 @@ ul {
     line-height: 77px;
     padding: 0 35px;
     transition: all linear 0.3s;
+    font-size: 0.1rem !important;
 
 }
 
@@ -172,12 +173,12 @@ ul {
 }
 
 #nav .header .main_menu ul li a {
-    color: var(--text);
-    font-weight: 600;
-    font-size: 20px;
-    font-family: var(--font), serif;
-    text-transform: uppercase;
-    padding: 0 10px;
+	color: var(--text);
+	font-weight: 600;
+	font-family: var(--font), serif;
+	text-transform: uppercase;
+	padding: 0 10px;
+	font-size: 15px !important;
 }
 
 #nav .header .main_menu ul li:after {
@@ -372,7 +373,7 @@ ul {
 
 /*=====================================blog============================*/
 .main_title {
-    padding: 10rem 0;
+    padding: 10rem 0 3rem;
     text-align: center;
 
     h1 {
@@ -736,3 +737,74 @@ ul {
 .add-content p a:hover {
     color: #ffb32d;
 }
+
+
+
+/* +++++++++++++++++++++++++++++++++popup++++++++++++++++++ */
+
+/* Modal Header */
+.modal-header {
+    background-color: #2C3E50;
+    color: white;
+    border-bottom: 2px solid #3498db;
+  }
+  
+  /* Input Field Styles */
+  .input-label {
+    font-size: 14px;
+    color: #2C3E50;
+  }
+  
+  .email-input, .password-input {
+    background-color: #ecf0f1;
+    border: 1px solid #BDC3C7;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .email-input:focus, .password-input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.7);
+    background-color: #fff;
+  }
+  
+  .email-input:hover, .password-input:hover {
+    border-color: #3498db;
+    background-color: #f7fafb;
+  }
+  
+  /* Submit Button Styles */
+  .submit-button {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+  }
+  
+  .submit-button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+  }
+  
+  .submit-button:disabled {
+    background-color: #BDC3C7;
+  }
+  
+  /* Modal Body */
+  .modal-body {
+    background-color: #ecf0f1;
+    padding: 20px;
+  }
+  
+  /* Form Styling */
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  

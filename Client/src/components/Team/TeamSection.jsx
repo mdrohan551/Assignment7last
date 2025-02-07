@@ -4,13 +4,21 @@ import GetDataStore from "../../store/GetDataStore.js";
 const TeamSection = () => {
     const { TeamDetails, imgURl, TeamDetailsRequest } = GetDataStore();
 
-    // useEffect will run only once, when the component is mounted
+    // Fetch team details only if not already available
     useEffect(() => {
-        // Fetch team details on component mount
-        TeamDetailsRequest();
-    }, [TeamDetailsRequest]);  // Now it will depend on TeamDetailsRequest
+        if (!TeamDetails?.data || TeamDetails.data.length === 0) {
+            TeamDetailsRequest();
+        }
+    }, [TeamDetails, TeamDetailsRequest]);
 
-    // Ensure the image URL is correct
+    // Debugging logs
+
+
+    // Ensure data is actually team data, not blog data
+    if (!TeamDetails?.data || TeamDetails.data.length === 0) {
+        return <div className="text-center">Loading...</div>;
+    }
+
     return (
         <section id="team" className="team content-section py-5">
             <div className="container">
@@ -22,22 +30,33 @@ const TeamSection = () => {
                 </div>
 
                 <div className="row g-3 justify-content-center">
-                    {/* Ensure TeamDetails.data exists and is an array */}
-                    {TeamDetails?.data?.length > 0 && TeamDetails.data.map((member, index) => {
-                        const img = `${imgURl}/${member.image}`;  // Image URL construction
+                    {TeamDetails.data.map((member, index) => {
+                        // Ensure correct data mapping
+                        const img = `${imgURl}/${member.image || "default-avatar.png"}`;
+
                         return (
-                            <div key={index} className="col-lg-4 col-md-6 col-sm-12">
+                            <div key={member._id} className="col-lg-4 col-md-6 col-sm-12">
                                 <div className="team-member">
                                     <figure className="team-img">
                                         <img src={img} alt={member.name} className="img-fluid rounded-circle" />
                                     </figure>
                                     <h4 className="team-name">{member.name}</h4>
-                                    <p className="team-role">{member.designation}</p> {/* Assuming 'designation' holds the role */}
-                                    <p className="team-description text-black-50">{member.description}</p> {/* Assuming 'description' exists */}
+                                    <p className="team-role">{member.designation || "Unknown Role"}</p>
+                                    <p className="team-description text-black-50">
+                                        {member.bio || "No description available"}
+                                    </p>
                                     <ul className="social-links">
-                                        <li><a href="#"><i className="bi bi-facebook"></i></a></li>
-                                        <li><a href="#"><i className="bi bi-twitter"></i></a></li>
-                                        <li><a href="#"><i className="bi bi-linkedin"></i></a></li>
+                                        {Array.isArray(member.socialLinks) && member.socialLinks.length > 0 ? (
+                                            member.socialLinks.map((link, i) => (
+                                                <li key={i}>
+                                                    <a href={link.url} target="_blank" rel="noopener noreferrer">
+                                                        <i className={`bi bi-${link.platform}`}></i>
+                                                    </a>
+                                                </li>
+                                            ))
+                                        ) : (
+                                            <li>No social links</li>
+                                        )}
                                     </ul>
                                 </div>
                             </div>

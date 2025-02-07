@@ -1,18 +1,23 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import MasterLayout from "../Layout/MasterLayout.jsx";
 import About from "../components/about/About.jsx";
 import GetDataStore from "../store/GetDataStore.js";
 
 const AboutPage = () => {
-    const { TeamDetailsRequest}=GetDataStore();
+    const { TeamDetailsRequest,getAboutRequest } = GetDataStore();
+
+    // Fetch data when the component is mounted
     useEffect(() => {
-        (async ()=>{
-            await TeamDetailsRequest()
-        })()
-    }, []);
+        const fetchData = async () => {
+            await TeamDetailsRequest();  // Fetch team details
+            await getAboutRequest();  // Fetch team details
+        };
+        fetchData();
+    }, [TeamDetailsRequest,getAboutRequest]);
+
     return (
         <MasterLayout>
-            <About/>
+            <About /> {/* About component will use the fetched data */}
         </MasterLayout>
     );
 };

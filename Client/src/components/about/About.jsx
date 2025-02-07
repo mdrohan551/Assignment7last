@@ -1,20 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import TeamSection from "../Team/TeamSection.jsx";
 import GetDataStore from "../../store/GetDataStore.js";
+import { Link } from 'react-router-dom';
 
 const About = () => {
-    const { TeamDetails, imgURl, TeamDetailsRequest } = GetDataStore();
+    const { getAbout, imgURl } = GetDataStore();  // Correctly destructure `imgURl`
+    const aboutData = getAbout?.data?.[0]; // Access first element in data array
 
-    // useEffect will run only once, when the component is mounted
-    useEffect(() => {
-        // Fetch team details on component mount
-        TeamDetailsRequest();
-    }, [TeamDetailsRequest]);  // Now it will depend on TeamDetailsRequest
-
-    // Ensure the image URL is correct
-    let img = `${imgURl}/${TeamDetails?.data?.image}`
-
-    console.log(TeamDetails);  // Check the full image URL
+    // Construct the image URL safely
+    const img = aboutData?.image ? `${imgURl}/${aboutData.image}` : "/default-avatar.png";
 
     return (
         <>
@@ -32,18 +26,19 @@ const About = () => {
                                 <img
                                     src={img}
                                     className="w-100 h-100"
-                                    alt="About Us Image"  // Alt text for accessibility
+                                    alt="About us"
                                 />
                             </div>
                         </div>
                         <div className="col-lg-6 col-12 py-2 py-lg-5">
                             <div className="about_text py-0 py-lg-5">
-                                <h1>{TeamDetails?.data?.name}</h1>
-                                <p className="mt-3">{TeamDetails?.data?.designation}</p>
+                                <h1>{aboutData?.name || 'Default Title'}</h1>
+                                <p className="mt-3">{aboutData?.description || 'Default Description'}</p>
                             </div>
-                            <a href="/contact" className="btn btn-outline-warning mt-3 mt-lg-0">Contact Us</a>
+                            <Link className="btn btn-outline-warning mt-3 mt-lg-0" to={'/contact'}>Contact us</Link>
                         </div>
 
+                        {/* Render Team Section */}
                         <TeamSection />
                     </div>
                 </div>

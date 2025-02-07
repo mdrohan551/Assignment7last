@@ -34,7 +34,10 @@ const corsOptions = {
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   allowedHeaders: ["Content-Type", "Authorization"],
 };
-app.use(cors(corsOptions));
+app.use(cors({
+  origin: "http://localhost:5173",
+  credentials: true
+}));
 app.use(
   helmet({
     contentSecurityPolicy: {
@@ -54,7 +57,7 @@ const limiter = rateLimit({
 app.use(limiter);
 
 // Web Caching
-app.set("etag", WEB_CACHE === "true");
+app.set("etag", WEB_CACHE === "false");
 
 // MongoDB Connection
 

@@ -1,31 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import myImg from "/my-img.png";
 import Cursor from "./cursor/Cursor.jsx";
-import actof from "/actof.png";
 import useGetDataStore from "../store/GetDataStore.js";
 import GetDataStore from "../store/GetDataStore.js"; // Correct import
 
 const Home = () => {
     const { homeData, detailsBLog} = useGetDataStore(); // Correct Zustand usage
-    const [cursor, setCursor] = useState({});
-    let img = `http://localhost:4000/${detailsBLog?.data?.image}`
-    const onHover = () => {
-        setCursor({
-            width: "200px",
-            height: "100px",
-            zIndex: "1",
-            clipPath: "none",
-            backgroundImage: `url(${actof})`,
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center center",
-            borderRadius: "5px",
-            border: "1px solid yellow",
-        });
-    };
+    let img = `http://localhost:4000/${homeData?.data?.file}`
 
-    const onLeave = () => {
-        setCursor({});
-    };
 
     return (
         <>
@@ -60,17 +42,15 @@ const Home = () => {
 
                                 <img
                                     // src={`${homeData.data.file}`}
-                                    src={homeData?.data.file}
+                                    src={img}
                                     alt="img"
-                                    onMouseEnter={onHover}
-                                    onMouseLeave={onLeave}
                                     className="w-100 h-100 mainImg"
                                 />
                                 <div className="img_bg"></div>
                             </div>
                         </div>
                     </div>
-                    <Cursor style={cursor} />
+                    <Cursor />
                 </div>
             ) : (
                 <p>Loading...</p>  // Show loading message until data loads

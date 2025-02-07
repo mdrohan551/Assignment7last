@@ -10,10 +10,10 @@
     height: 10px;
     background: var(--hover);
     border-radius: 50%;
-
+    mix-blend-mode: green !important;;
     pointer-events: none;
 
-    z-index: 999;
+    z-index: 9999999;
 
 }
 .mainCursor:before{

@@ -99,14 +99,27 @@ const useGetDataStore = create((set, get) => ({  // 'get' allows accessing state
     },
 
 
-    TeamDetails:{},
+    TeamDetails:[],
     TeamDetailsRequest:async () => {
         try {
             const { mainUrl } = get();
             const res = await axios.get(`${mainUrl}/read-team`);
             set({ TeamDetails: res.data });
+
         }catch(error) {
             console.error('Error fetching team data:', error);
+        }
+
+    },
+
+    getAbout:{},
+    getAboutRequest:async () => {
+        try {
+            const { mainUrl } = get();
+            const res = await axios.get(`${mainUrl}/read-about`);
+            set({ getAbout: res.data });
+        }catch(error) {
+            console.error('Error fetching about data:', error);
         }
 
     },
