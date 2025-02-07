@@ -44,7 +44,7 @@ const CreateBlogs = () => {
             return;
         }
 
-        const success = await CreateBLogsrequest();
+        const success = await CreateBLogsrequest(CreateBlog);
         if (success.success === true) {
             toast.success("Blog created successfully!");
         } else {

@@ -150,15 +150,16 @@ const DashboardGet = create((set, get) => ({
 
     // Create Blog API (POST request)
 // Create Blog API (POST request)
-    CreateBLogsrequest: async () => {
+    CreateBLogsrequest: async (data) => {
         try {
-            const { mainUrl, CreateBlog, token } = get(); // ✅ Make sure token is retrieved
+            const token = cookie.get("token");
+            const { mainUrl } = get(); // ✅ Make sure token is retrieved
             if (!token) {
                 console.error("Token is missing! Please login again.");
                 return { success: false, error: "Unauthorized" };
             }
 
-            const res = await axios.post(`${mainUrl}/api/v1/create-blog`, CreateBlog, {
+            const res = await axios.post(`${mainUrl}/create-blog`, data, {
                 headers: { Authorization: `Bearer ${token}` } // ✅ Send token in headers
             });
 

@@ -4,6 +4,7 @@ import GetDataStore from "../../store/GetDataStore.js";
 const BlogDetails = () => {
     const {detailsBLog,imgURl} = GetDataStore()
     let img = `${imgURl}/${detailsBLog?.data?.image}`
+    console.log(img);
     return (
         <div>
             <div className="blog">
