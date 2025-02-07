@@ -19,22 +19,21 @@ export const loginUser = async (req, res) => {
   let result = await loginUserService(req);
 
   if (result.status === 200) {
-    let cookieOptions = {
-      expires: new Date(Date.now() + 1000 * 60 * 60 * 5), // 1 days
+    res.cookie("token", result.token, {
+      expires: new Date(Date.now() + 1000 * 60 * 60 * 5), // 5 hours
       httpOnly: true,
-    };
-    res.cookie("token", result.token, cookieOptions);
+      secure: true, // Only in HTTPS
+      sameSite: "Strict",
+    });
 
     return res.status(result.status).json({
       success: result.success,
-      error: result.error,
       message: result.message,
-      token: result.token,
+      token: result.token, // Send token if needed
     });
   } else {
     return res.status(result.status).json({
       success: result.success,
-      error: result.error,
       message: result.message,
     });
   }
@@ -43,32 +42,20 @@ export const loginUser = async (req, res) => {
 //User Logout
 export const logoutUser = async (req, res) => {
   try {
-    const userId = req.headers.user_id; // Auth Middleware
-    if (!userId) {
-      return res.status(400).json({
-        success: false,
-        error: true,
-        message: "User ID is missing in the request.",
-      });
-    }
-
-    let cookieOptions = {
-      expires: new Date(Date.now() +1000 * 60 * 60 * 5), // 1 days
+    res.clearCookie("token", {
       httpOnly: true,
-    };
-
-    res.clearCookie("token", cookieOptions);
+      secure: true,
+      sameSite: "Strict",
+    });
 
     return res.status(200).json({
       success: true,
-      error: false,
       message: "User logged out successfully!",
     });
   } catch (err) {
     return res.status(500).json({
       success: false,
-      error: true,
-      message: "Internal Server Error" + " " + err.toString(),
+      message: "Internal Server Error: " + err.toString(),
     });
   }
 };
