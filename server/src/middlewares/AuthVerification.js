@@ -1,7 +1,7 @@
 import { DecodeToken } from "../utils/TokenHelper.js";
 
 export default (req, res, next) => {
-  let token = req.headers["token"];
+  let token = req.headers["token"] || req.headers.authorization?.split(" ")[1];
   if (!token) {
     token = req.cookies["token"];
   }
