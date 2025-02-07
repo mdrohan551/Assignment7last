@@ -1,12 +1,16 @@
 import jwt from "jsonwebtoken";
-import {JWT_EXPIRATION_TIME_TOKEN, JWT_SECRET_TOKEN,} from "../config/config.js";
+import {
+  JWT_EXPIRATION_TIME_TOKEN,
+  JWT_SECRET_TOKEN,
+} from "../config/config.js";
 
 // Encode Access Token
 export const EncodeToken = (email, user_id) => {
   const KEY = JWT_SECRET_TOKEN;
   const EXPIRE = { expiresIn: JWT_EXPIRATION_TIME_TOKEN };
   const PAYLOAD = { email: email, user_id: user_id };
-  return jwt.sign(PAYLOAD, KEY, EXPIRE);
+  const token = jwt.sign(PAYLOAD, KEY, EXPIRE);
+  return token;
 };
 
 // Decode Access Token
