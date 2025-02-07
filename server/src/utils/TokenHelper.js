@@ -6,7 +6,8 @@ export const EncodeToken = (email, user_id) => {
   const KEY = JWT_SECRET_TOKEN;
   const EXPIRE = { expiresIn: JWT_EXPIRATION_TIME_TOKEN };
   const PAYLOAD = { email: email, user_id: user_id };
-  return jwt.sign(PAYLOAD, KEY, EXPIRE);
+  const token =jwt.sign(PAYLOAD, KEY, EXPIRE);
+  return token;
 };
 
 // Decode Access Token
