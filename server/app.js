@@ -57,7 +57,7 @@ const limiter = rateLimit({
 app.use(limiter);
 
 // Web Caching
-app.set("etag", WEB_CACHE === "false");
+app.set("etag", WEB_CACHE === "true");
 
 // MongoDB Connection
 
