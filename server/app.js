@@ -30,7 +30,7 @@ app.use(cookieParser());
 app.use(xss());
 
 const corsOptions = {
-  origin: "*", // সব জায়গা থেকে এক্সেস করতে দিবে
+  origin: "http://localhost:5173/", // সব জায়গা থেকে এক্সেস করতে দিবে
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   allowedHeaders: ["Content-Type", "Authorization"],
 };
@@ -79,7 +79,7 @@ app.use(
   "/uploads",
   express.static("uploads", {
     setHeaders: (res) => {
-      res.setHeader("Access-Control-Allow-Origin", "*");
+      res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173/");
       res.setHeader("Cross-Origin-Resource-Policy", "cross-origin"); // Important for images
     },
   })
