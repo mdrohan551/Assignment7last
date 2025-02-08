@@ -36,7 +36,7 @@ const corsOptions = {
 };
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "*",
     credentials: true,
   })
 );
@@ -94,11 +94,11 @@ app.all("*", (req, res) => {
 });
 
 // Serve static files from the React app (if needed)
-app.use(express.static("client/dist"));
+// app.use(express.static("client/dist"));
 
 // Add React Front End Routing (if needed)
-app.get("*", function (req, res) {
-  res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
-});
+// app.get("*", function (req, res) {
+//   res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
+// });
 
 export default app;
