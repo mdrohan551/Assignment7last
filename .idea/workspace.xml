@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a92cd10b-8d29-4a56-9dfe-a9914840fe61" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Assignment7last.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/uploads/api-img__1739027702462-my-img.png" beforeDir="false" afterPath="$PROJECT_DIR$/server/uploads/api-img__1739033365272-my-img.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/uploads/api-img__1739028986801-my-img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/uploads/api-img__1739029041073-GradientGreenSimpleBoldJobVacancyMedicalAssistantTwitterPost.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/uploads/api-img__1739029290301-azim-removebg-preview.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/uploads/api-img__1739029457564-Firefly_20241218212558-transformed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/uploads/api-img__1739029560709-azim-removebg-preview.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/uploads/api-img__1739029623754-Untitled(1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/uploads/api-img__1739029660659-azim-removebg-preview.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/uploads/api-img__1739029739774-Actof.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/uploads/api-img__1739029968267-prothomalo-bangla_2024-12-28_3yqphy9a_Photo01-13.avif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/uploads/api-img__1739030147772-prothomalo-bangla_2024-12-28_3yqphy9a_Photo01-13.avif" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="2slggz40Psp2XyRKHHwKlPI7Teq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23726.96" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a92cd10b-8d29-4a56-9dfe-a9914840fe61" name="Changes" comment="" />
+      <created>1739035692289</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1739035692289</updated>
+      <workItem from="1739035695025" duration="2000" />
+    </task>
+    <servers />
+  </component>
+</project>

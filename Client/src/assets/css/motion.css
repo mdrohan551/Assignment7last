@@ -1,0 +1,31 @@
+*{
+    cursor: none !important;
+}
+
+.mainCursor{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    background: var(--hover);
+    border-radius: 50%;
+    mix-blend-mode: green !important;;
+    pointer-events: none;
+
+    z-index: 9999999;
+
+}
+.mainCursor:before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height:40px;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 50%;
+
+}
