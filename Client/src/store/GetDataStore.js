@@ -2,8 +2,8 @@ import { create } from 'zustand';
 import axios from 'axios';
 
 const useGetDataStore = create((set, get) => ({  // 'get' allows accessing state values
-    mainUrl: 'http://localhost:4000/api/v1',  // API base URL
-    imgURl: 'http://localhost:4000',  // API base URL
+    mainUrl: 'https://assignment7last.vercel.app/api/v1',  // API base URL
+    imgURl: 'https://assignment7last.vercel.app',  // API base URL
     homeData: {},  // Initial state
     homeDataReq: async () => {
         try {
