@@ -6,7 +6,7 @@ import GetDataStore from "../store/GetDataStore.js"; // Correct import
 
 const Home = () => {
     const { homeData, detailsBLog} = useGetDataStore(); // Correct Zustand usage
-    let img = `http://localhost:4000/${homeData?.data?.file}`
+    let img = `http://localhost:4000/${homeData?.data?.image}`
 
 
     return (

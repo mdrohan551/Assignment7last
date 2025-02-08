@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import DashboardStore from '../../store/DashboardStore';
 import GetDataStore from "../../store/GetDataStore";
 import CreateBlogs from "./CreateBLogs/CreateBlogs.jsx";
+import HeroCreate from "./CreateHero/HeroCreate.jsx";
+import CreateAbout from "./Createabout/CreateAbout.jsx";
 
 const Dashboard = () => {
     const { contacts ,isLogin ,userLogOutRequest} = DashboardStore();
@@ -64,16 +66,25 @@ const Dashboard = () => {
 
                         {/* Blog Table */}
 
-                        <div className="col-4">
-                            <h2 className="mt-4 text-center bg-danger text-white text-uppercase p-2">Blog</h2>
-                            <CreateBlogs/>
+                        <div className="row">
+                            <div className="col-lg-4 col-sm-12">
+                                <h2 className="mt-4 text-center bg-danger text-white text-uppercase p-2">Blog</h2>
+                                <CreateBlogs/>
+                            </div>
+                            <div className="col-lg-4 col-sm-12">
+                                <h2 className="mt-4 text-center bg-danger text-white text-uppercase p-2">hero</h2>
+                                <HeroCreate/>
+                            </div>
+                            <div className="col-lg-4 col-sm-12">
+                                <h2 className="mt-4 text-center bg-danger text-white text-uppercase p-2">about</h2>
+                                <CreateAbout/>
+                            </div>
+
+
+                            {/* Manage Services, Blogs, and Contacts */}
+                            <h2 className="mt-4">Manage Services</h2>
                         </div>
-
-
-                        {/* Manage Services, Blogs, and Contacts */}
-                        <h2 className="mt-4">Manage Services</h2>
                         {/* Contact Table */}
-                        <h2 className="mt-4">Manage Contacts</h2>
 
 
                         <table className="table table-bordered mt-3 table-responsive">

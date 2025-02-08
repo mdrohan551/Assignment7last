@@ -1,28 +1,10 @@
-import React, {useState} from "react";
+import React from "react";
 import DashboardStore from "../../../store/DashboardStore.js";
 import toast from "react-hot-toast";
+import Image from "../Image.jsx";
 
 const CreateBlogs = () => {
-    const {CreateBlog, FormChangeBlogs, CreateBLogsrequest, multerImage} = DashboardStore();
-
-    // State to track file upload status
-    const [uploading, setUploading] = useState(false);
-    const [selectedImage, setSelectedImage] = useState(null);
-    // Handle Image Upload
-    const handleImageUpload = async (e) => {
-        const file = e.target.files[0];
-        if (!file) {
-            toast.error("No file selected");
-            return;
-        }
-        setUploading(true); // Set uploading state to true
-        let res = await multerImage(file);
-        setUploading(false); // Set uploading state to false after response
-        if (res) {
-            setSelectedImage(res);
-            FormChangeBlogs("image", res); // শুধুমাত্র URL পাঠাও
-        }
-    };
+    const { CreateBlog, FormChangeBlogs, CreateBLogsrequest } = DashboardStore();
 
     // Handle Submit
     const handleSubmit = async (e) => {
@@ -43,15 +25,8 @@ const CreateBlogs = () => {
     return (
         <div className="card p-3">
             <form onSubmit={handleSubmit}>
-                <label htmlFor="file" className="d-block mb-2 text-center">
-                    <i className="bi bi-cloud-arrow-up" style={{fontSize: "60px"}}></i>
-                </label>
-                <input id="file" type="file" hidden onChange={handleImageUpload}/>
-
-                {uploading && <p>Uploading image...</p>} {/* Show loading text */}
-                {selectedImage &&
-                    <p>Image uploaded: <a href={selectedImage} target="_blank" rel="noopener noreferrer">View Image</a>
-                    </p>} {/* Show uploaded image link */}
+                {/* Pass FormChangeBlogs to Image component */}
+                <Image imageFormChangeBlogs={FormChangeBlogs}/>
 
                 <input
                     type="text"
@@ -61,12 +36,29 @@ const CreateBlogs = () => {
                     placeholder="Blog Title"
                 />
                 <textarea
-                    onChange={(e) => FormChangeBlogs("content", e.target.value)}
+                    onChange={(e) => {
+                        const value = e.target.value;
+                        const words = value.split(' ');  // Split the text into words
+                        let formattedText = '';
+
+                        words.forEach((word, index) => {
+                            formattedText += word + ' ';
+                            // After every 5th word, add a line break
+                            if ((index + 1) % 5 === 0) {
+                                formattedText += '\n';
+                            }
+                        });
+
+                        // Update the state with formatted text
+                        FormChangeBlogs("content", formattedText.trim());
+                    }}
                     value={CreateBlog.content}
                     className="input mt-3 fs-5"
                     placeholder="Content"
                     style={{resize: "both", width: "100%", minHeight: "100px"}}
                 />
+
+
                 <input
                     type="text"
                     onChange={(e) => FormChangeBlogs("author", e.target.value)}

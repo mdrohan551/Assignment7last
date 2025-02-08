@@ -42,9 +42,9 @@ const Blog = () => {
                 <h1>Our Blog</h1>
             </div>
             <div className="container py-5">
-                <div className="row">
+                <div className="row g-2">
                     {BlogData.data.map((item, index) => (
-                        <div className="col-lg-4 col-md-6 col-12 mb-4" key={index}>
+                        <div className="col-lg-4 col-md-6 col-4 mb-4" key={index}>
                             <Link to={`/details/${item.slug}`} className="blog-card">
                                 <div className="cards">
                                     <div className="headers">

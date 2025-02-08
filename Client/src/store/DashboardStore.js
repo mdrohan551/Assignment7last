@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import axios from 'axios';
 import cookie from 'js-cookie';
+import CreateBlogs from "../components/Dashboard/CreateBLogs/CreateBlogs.jsx";
 
 const DashboardGet = create((set, get) => ({
     mainUrl: 'http://localhost:4000/api/v1',
@@ -90,6 +91,8 @@ const DashboardGet = create((set, get) => ({
                 window.location.href = "/";
             } else {
                 console.error("Logout failed:", res.data.message);
+                // 🔄 UI রিফ্রেশ করুন
+                window.location.href = "/";
             }
         } catch (error) {
             console.error("Error during logout:", error);
@@ -105,17 +108,40 @@ const DashboardGet = create((set, get) => ({
         author: "",
         category: ""
     },
+    // Initial State
+    CreateHero: {
+        title: "",
+        subtile: "",
+        image: ``,
 
-    // Handle Form Change
-    FormChangeBlogs: (name, value) => {
-        set((state) => ({
-            CreateBlog: { ...state.CreateBlog, [name]: value }
-        }));
     },
+// Handle Form Change
+    FormChangeBlogs: (name, value) => {
+        set((state) => {
+            // Update CreateBlog state with the new value
+            const updatedBlog = { ...state.CreateBlog, [name]: value };
+
+            // If the name is 'image', also update CreateHero.image and CreateAbout.image
+            const updatedHero = name === 'image'
+                ? { ...state.CreateHero, image: value }
+                : state.CreateHero;
+
+            const updatedAbout = name === 'image'
+                ? { ...state.CreateAbout, image: value }
+                : state.CreateAbout;
+
+            return {
+                CreateBlog: updatedBlog,
+                CreateHero: updatedHero,
+                CreateAbout: updatedAbout
+            };
+        });
+    },
+
 
     multerImage: async (file) => {
         try {
-            console.log("📤 Sending image to API:", file); // ✅ API তে পাঠানোর আগে চেক করুন
+
 
             const { mainUrl } = get();
             const token = cookie.get("token");
@@ -135,7 +161,6 @@ const DashboardGet = create((set, get) => ({
             });
 
             if (res.data.success && res.data.data.url) {
-                console.log("✅ API response:", res.data.data.url); // ✅ API থেকে কি আসছে চেক করুন
                 return res.data.data.url;
             } else {
                 console.error("❌ Upload failed:", res.data.message);
@@ -163,16 +188,147 @@ const DashboardGet = create((set, get) => ({
                 headers: { Authorization: `Bearer ${token}` } // ✅ Send token in headers
             });
 
+
             return res.data;
         } catch (error) {
             console.error("Error creating blog:", error.response?.data || error.message);
             return { success: false, error: true };
         }
+    },
+
+
+    // Handle Form Change
+    FormChangeHero: (name, value) => {
+        set((state) => ({
+            CreateHero: { ...state.CreateHero, [name]: value }
+        }));
+    },
+
+    CreateHeroRequest: async (herodata) => {
+        try {
+            const token = cookie.get("token");
+            const { mainUrl } = get(); // ✅ Make sure token is retrieved
+            if (!token) {
+                console.error("Token is missing! Please login again.");
+                return { success: false, error: "Unauthorized" };
+            }
+            const res = await axios.post(`${mainUrl}/create-slider`, herodata, {
+                headers: { Authorization: `Bearer ${token}` } // ✅ Send token in headers
+            });
+
+            return res.data;
+        } catch (error) {
+            console.error("Error creating blog:", error.response?.data || error.message);
+            return { success: false, error: true };
+        }
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // ============================================
+    CreateAbout: {
+        name: "",
+        description: "",
+        image: "",
+        socialLinks: {
+            facebook: "",
+            linkedin: "",
+            twitter: ""
+        }
+    },
+
+    // 🔹 Form Change Function
+    FormChangeAbout: (name, value) => {
+        set((state) => {
+            // যদি সোশ্যাল লিংক আপডেট হয়, তাহলে সেটাকে আলাদা ভাবে হ্যান্ডেল করবো
+            if (name.startsWith("socialLinks.")) {
+                const key = name.split(".")[1]; // socialLinks.facebook -> facebook
+                return {
+                    CreateAbout: {
+                        ...state.CreateAbout,
+                        socialLinks: {
+                            ...state.CreateAbout.socialLinks,
+                            [key]: value
+                        }
+                    }
+                };
+            }
+
+            // অন্য সব ক্ষেত্রের জন্য সাধারণ আপডেট
+            return {
+                CreateAbout: {
+                    ...state.CreateAbout,
+                    [name]: value
+                }
+            };
+        });
+    },
+
+    // Handle Social Links Update
+    UpdateSocialLinks: (platform, value) => {
+        set((state) => ({
+            CreateAbout: {
+                ...state.CreateAbout,
+                socialLinks: { ...state.CreateAbout.socialLinks, [platform]: value }
+            }
+        }));
+    },
+
+
+    // Create About API Request
+    CreateAboutRequest: async (CreateAbout) => {
+        try {
+            const {  mainUrl } = get();
+            const token = cookie.get("token");
+
+            if (!token) {
+                console.error("Token is missing! Please login again.");
+                return { success: false, error: "Unauthorized" };
+            }
+
+            const res = await axios.post(`${mainUrl}/create-about`, CreateAbout, {
+                headers: { Authorization: `Bearer ${token}` }
+            });
+
+            return res.data;
+        } catch (error) {
+            console.error("Error creating about section:", error.response?.data || error.message);
+            return { success: false, error: true };
+        }
     }
-
-
-
-
 }));
 
 export default DashboardGet;
