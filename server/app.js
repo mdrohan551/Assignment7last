@@ -30,7 +30,7 @@ app.use(cookieParser());
 app.use(xss());
 
 const corsOptions = {
-  origin: "http://localhost:5173/,https://assignment7last-gm8w.vercel.app", // সব জায়গা থেকে এক্সেস করতে দিবে
+  origin: "https://assignment7last-gm8w.vercel.app", // সব জায়গা থেকে এক্সেস করতে দিবে
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   allowedHeaders: ["Content-Type", "Authorization"],
 };
