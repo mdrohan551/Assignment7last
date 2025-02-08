@@ -42,22 +42,6 @@ const TeamSection = () => {
                                     </figure>
                                     <h4 className="team-name">{member.name}</h4>
                                     <p className="team-role">{member.designation || "Unknown Role"}</p>
-                                    <p className="team-description text-black-50">
-                                        {member.bio || "No description available"}
-                                    </p>
-                                    <ul className="social-links">
-                                        {Array.isArray(member.socialLinks) && member.socialLinks.length > 0 ? (
-                                            member.socialLinks.map((link, i) => (
-                                                <li key={i}>
-                                                    <a href={link.url} target="_blank" rel="noopener noreferrer">
-                                                        <i className={`bi bi-${link.platform}`}></i>
-                                                    </a>
-                                                </li>
-                                            ))
-                                        ) : (
-                                            <li>No social links</li>
-                                        )}
-                                    </ul>
                                 </div>
                             </div>
                         );

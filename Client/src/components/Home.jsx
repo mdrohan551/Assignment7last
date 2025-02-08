@@ -19,10 +19,10 @@ const Home = () => {
                             <div className="Hero_text">
                                 <p className="fs-3 text-capitalize">Hello ,</p>
                                 <h1 className="text-white">
-                                    I'm a <span className="main_color">{homeData?.data.title}</span> based in
+                                    I'm a <span className="main_color">{homeData?.data?.title}</span> based in
                                     Bangladesh
                                 </h1>
-                                <p className="fw-light paragrap">{homeData?.data.subtile}</p>
+                                <p className="fw-light paragrap">{homeData?.data?.subtile}</p>
                                 <button className="button mt-5">
                                     <span></span>
                                     <span></span>

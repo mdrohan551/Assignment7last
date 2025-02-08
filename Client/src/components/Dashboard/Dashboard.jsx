@@ -5,6 +5,8 @@ import GetDataStore from "../../store/GetDataStore";
 import CreateBlogs from "./CreateBLogs/CreateBlogs.jsx";
 import HeroCreate from "./CreateHero/HeroCreate.jsx";
 import CreateAbout from "./Createabout/CreateAbout.jsx";
+import CreateTeam from "./Team/CreateTeam .jsx";
+import CreateService from "./Services/CreateService.jsx";
 
 const Dashboard = () => {
     const { contacts ,isLogin ,userLogOutRequest} = DashboardStore();
@@ -79,10 +81,16 @@ const Dashboard = () => {
                                 <h2 className="mt-4 text-center bg-danger text-white text-uppercase p-2">about</h2>
                                 <CreateAbout/>
                             </div>
+                            <div className="col-lg-4 col-sm-12">
+                                <h2 className="mt-4 text-center bg-danger text-white text-uppercase p-2">Team</h2>
+                                <CreateTeam/>
+                            </div>
+                            <div className="col-lg-4 col-sm-12">
+                                <h2 className="mt-4 text-center bg-danger text-white text-uppercase p-2">Team</h2>
+                                <CreateService/>
+                            </div>
 
 
-                            {/* Manage Services, Blogs, and Contacts */}
-                            <h2 className="mt-4">Manage Services</h2>
                         </div>
                         {/* Contact Table */}
 
