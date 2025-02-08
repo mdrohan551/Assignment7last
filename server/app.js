@@ -79,7 +79,7 @@ app.use(
   "/uploads",
   express.static("uploads", {
     setHeaders: (res) => {
-      res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173/");
+      res.setHeader("Access-Control-Allow-Origin", "https://assignment7last-gm8w.vercel.app/");
       res.setHeader("Cross-Origin-Resource-Policy", "cross-origin"); // Important for images
     },
   })
