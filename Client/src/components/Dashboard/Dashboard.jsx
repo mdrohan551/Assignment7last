@@ -86,7 +86,7 @@ const Dashboard = () => {
                                 <CreateTeam/>
                             </div>
                             <div className="col-lg-4 col-sm-12">
-                                <h2 className="mt-4 text-center bg-danger text-white text-uppercase p-2">Team</h2>
+                                <h2 className="mt-4 text-center bg-danger text-white text-uppercase p-2">service</h2>
                                 <CreateService/>
                             </div>
 
