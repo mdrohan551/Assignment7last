@@ -30,7 +30,7 @@ app.use(cookieParser());
 app.use(xss());
 
 const corsOptions = {
-  origin: "https://assignment7last-4yvm.vercel.app/", // সব জায়গা থেকে এক্সেস করতে দিবে
+  origin: "*", // সব জায়গা থেকে এক্সেস করতে দিবে
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   allowedHeaders: ["Content-Type", "Authorization"],
 };
@@ -79,7 +79,7 @@ app.use(
   "/uploads",
   express.static("uploads", {
     setHeaders: (res) => {
-      res.setHeader("Access-Control-Allow-Origin", "https://assignment7last-4yvm.vercel.app/");
+      res.setHeader("Access-Control-Allow-Origin", "*");
       res.setHeader("Cross-Origin-Resource-Policy", "cross-origin"); // Important for images
     },
   })
