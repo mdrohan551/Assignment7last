@@ -2,8 +2,8 @@ import { create } from 'zustand';
 import axios from 'axios';
 import cookie from 'js-cookie';
 const DashboardGet = create((set, get) => ({
-    mainUrl: 'http://localhost:4000/api/v1',
-    imgURl: 'http://localhost:4000',
+    mainUrl: 'https://assignment7last.vercel.app/api/v1',
+    imgURl: 'https://assignment7last.vercel.app',
     contacts: [],
     // Fetch Contacts with Authorization Token
     contactgetDataReq: async () => {
