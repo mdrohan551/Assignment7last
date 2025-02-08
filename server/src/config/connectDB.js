@@ -1,5 +1,9 @@
 import mongoose from "mongoose";
-import { MONGODB_URL } from "../config/config.js";
+import dotenv from "dotenv";
+
+dotenv.config(); // Ensure environment variables are loaded
+
+const MONGODB_URL = process.env.MONGODB_URL;
 
 if (!MONGODB_URL) {
   throw new Error("Missing MONGODB_URL environment variable");
@@ -8,11 +12,13 @@ if (!MONGODB_URL) {
 async function connectDB() {
   try {
     await mongoose.connect(MONGODB_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
       autoIndex: true,
     });
-    console.log("Connected to MongoDB successfully!");
+    console.log("✅ MongoDB Connected Successfully!");
   } catch (err) {
-    console.error("Failed to connect to MongoDB!", err);
+    console.error("❌ MongoDB Connection Failed:", err);
     process.exit(1);
   }
 }
