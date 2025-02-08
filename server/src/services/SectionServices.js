@@ -223,9 +223,9 @@ export const GetSingleBlogService = async (req) => {
 // ...................................................................................................
 export const CreateSliderService = async (req) => {
   try {
-    const { title, subtile, file } = req.body;
+    const { title, subtile, image } = req.body;
 
-    if (!title || !subtile || !file) {
+    if (!title || !subtile || !image) {
       return {
         status: 400,
         success: false,
@@ -240,7 +240,7 @@ export const CreateSliderService = async (req) => {
         {
           title,
           subtile,
-          file,
+          image,
         },
         { new: true }
       );
@@ -255,7 +255,7 @@ export const CreateSliderService = async (req) => {
       const slider = await SliderModel.create({
         title,
         subtile,
-        file,
+        image,
       });
       return {
         status: 201,
